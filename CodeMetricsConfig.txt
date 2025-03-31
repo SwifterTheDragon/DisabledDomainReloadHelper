@@ -1,0 +1,46 @@
+# Copyright SwifterTheDragon, 2025. All Rights Reserved.
+# SPDX-License-Identifier: MIT
+# This CodeMetricsConfig.txt file should be placed in the root directory of the repository.
+# SwifterTheDragon's CodeMetricsConfig.txt for DisabledDomainReloadHelper.
+# Please do not overwrite this file with a template!
+
+# Formatting:
+
+# 'RuleId'(Optional 'SymbolKind'): 'Threshold'
+
+# Valid values for RuleId are CA1501, CA1502, CA1505, and CA1506.
+# Valid values for the optional SymbolKind are Assembly, Namespace, Type, Method, Field, Event, and Property.
+# Valid values for Threshold are non-negative integers.
+# Lines starting with '#' are treated as comment lines.
+
+# Please see https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1509 for details.
+
+# CA1501: Avoid excessive inheritance
+# This rule's severity can be configured via an .editorconfig file.
+# Please keep this rule's threshold at 5 to avoid types with an inheritance hierarchy five or more levels deep for maintainability.
+CA1501(Type): 5
+# CA1502: Avoid excessive complexity
+# By default, this rule only handles methods.
+# This rule's severity can be configured via an .editorconfig file.
+# Please keep this rule's method threshold at 25 to avoid methods with excessive cyclomatic complexity for maintainability.
+CA1502(Method): 25
+# CA1505: Avoid unmaintainable code
+# By default, this rule only handles types, methods, fields, properties, and events.
+# This rule's severity can be configured via an .editorconfig file.
+# Please keep this rule's type/method/field/property/event thresholds at 10 to avoid unmaintainable code in types/methods/fields/properties/events.
+CA1505(Type): 10
+CA1505(Method): 10
+CA1505(Field): 10
+CA1505(Property): 10
+CA1505(Event): 10
+# CA1506: Avoid excessive class coupling
+# This rule's severity can be configured via an .editorconfig file.
+# Please keep this rule's type threshold at 95 to avoid types with excessive class coupling for maintainability.
+CA1506(Type): 95
+# Please keep this rule's method/field/property/event thresholds at 40 to avoid excessive class coupling in methods/fields/properties/events.
+CA1506(Method): 40
+CA1506(Field): 40
+CA1506(Property): 40
+CA1506(Event): 40
+
+# Copyright SwifterTheDragon, 2025. All Rights Reserved.
