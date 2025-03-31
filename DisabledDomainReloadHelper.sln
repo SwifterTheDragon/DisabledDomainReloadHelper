@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwifterTheDragon.DisabledDomainReloadHelper.Markers", "src\SwifterTheDragon.DisabledDomainReloadHelper.Markers\SwifterTheDragon.DisabledDomainReloadHelper.Markers.csproj", "{05747DBF-F03B-433C-99E2-96DCD9C3DD0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{82A48FE9-50A0-BF29-7DA5-004BF8C2C605}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82A48FE9-50A0-BF29-7DA5-004BF8C2C605}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82A48FE9-50A0-BF29-7DA5-004BF8C2C605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05747DBF-F03B-433C-99E2-96DCD9C3DD0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05747DBF-F03B-433C-99E2-96DCD9C3DD0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05747DBF-F03B-433C-99E2-96DCD9C3DD0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05747DBF-F03B-433C-99E2-96DCD9C3DD0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
