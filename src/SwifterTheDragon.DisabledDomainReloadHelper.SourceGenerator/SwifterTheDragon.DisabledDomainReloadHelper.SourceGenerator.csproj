@@ -2,7 +2,13 @@
 <!-- SPDX-License-Identifier: MIT -->
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <Authors>SwifterTheDragon</Authors>
+        <Description>Source generates boilerplate required to cleanup after disabled domain reloads in Unity projects.</Description>
+        <FileVersion>1.0.0.0</FileVersion>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <Title>$(AssemblyName)</Title>
+        <Version>1.0.0</Version>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="Meziantou.Analyzer" Version="2.0.189">
