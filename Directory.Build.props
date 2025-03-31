@@ -1,0 +1,25 @@
+<!-- Copyright SwifterTheDragon, 2025. All Rights Reserved. -->
+<!-- SPDX-License-Identifier: MIT -->
+<Project>
+    <PropertyGroup>
+        <!-- Do not add <AssemblyVersion> here. Each assembly should receive a unique assembly version. -->
+        <Company>SwifterTheDragon</Company>
+        <Copyright>Copyright SwifterTheDragon, 2025. All Rights Reserved.</Copyright>
+        <!-- Do not add <Description> here. Each assembly should receive a unique description. -->
+        <!-- Do not add <FileVersion> here. Each assembly should receive a unique file version. -->
+        <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+        <InformationalVersion>1.0.0</InformationalVersion>
+        <Product>DisabledDomainReloadHelper</Product>
+    </PropertyGroup>
+    <ItemGroup>
+        <AssemblyAttribute Include="System.CLSCompliantAttribute">
+            <_Parameter1>true</_Parameter1>
+        </AssemblyAttribute>
+        <AssemblyAttribute Include="System.Reflection.AssemblyDefaultAliasAttribute">
+            <_Parameter1>$(AssemblyName)</_Parameter1>
+        </AssemblyAttribute>
+        <AssemblyAttribute Include="System.Runtime.InteropServices.ComVisibleAttribute">
+            <_Parameter1>true</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+</Project>
