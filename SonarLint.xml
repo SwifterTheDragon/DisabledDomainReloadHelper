@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright SwifterTheDragon, 2025. All Rights Reserved. -->
+<!-- SPDX-License-Identifier: MIT -->
+<!-- This SonarLint.xml file should be placed in the root directory of the repository. -->
+<!-- SwifterTheDragon's SonarLint.xml for DisabledDomainReloadHelper. -->
+<!-- Please do not overwrite this file with a template! -->
+<AnalysisInput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Settings>
+        <Setting>
+            <Key>sonar.exclusions</Key>
+            <Value></Value>
+        </Setting>
+        <Setting>
+            <Key>sonar.inclusions</Key>
+            <Value></Value>
+        </Setting>
+        <Setting>
+            <Key>sonar.global.exclusions</Key>
+            <Value></Value>
+        </Setting>
+        <Setting>
+            <Key>sonar.test.exclusions</Key>
+            <Value></Value>
+        </Setting>
+        <Setting>
+            <Key>sonar.test.inclusions</Key>
+            <Value></Value>
+        </Setting>
+        <Setting>
+            <Key>sonar.global.test.exclusions</Key>
+            <Value></Value>
+        </Setting>
+        <Setting>
+            <Key>sonar.cs.ignoreHeaderComments</Key>
+            <Value>false</Value>
+        </Setting>
+        <Setting>
+            <Key>sonar.cs.analyzeGeneratedCode</Key>
+            <Value>false</Value>
+        </Setting>
+        <Setting>
+            <Key>sonar.cs.analyzeRazorCode</Key>
+            <Value>false</Value>
+        </Setting>
+    </Settings>
+    <Rules>
+        <Rule>
+            <!-- Lines should not be too long -->
+            <!-- S103 is disabled in favour for RCS0056. -->
+            <Key>S103</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>maximumLineLength</Key>
+                    <Value>200</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Files should not have too many lines of code -->
+            <Key>S104</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>maximumFileLocThreshold</Key>
+                    <Value>1024</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Expressions should not be too complex -->
+            <Key>S1067</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>max</Key>
+                    <Value>3</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Methods should not have too many parameters -->
+            <Key>S107</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>max</Key>
+                    <Value>7</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Inheritance tree of classes should not be too deep -->
+            <!-- S110 is disabled in favour for CA1501. -->
+            <Key>S110</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>max</Key>
+                    <Value>5</Value>
+                </Parameter>
+                <Parameter>
+                    <Key>filteredClasses</Key>
+                    <Value></Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- "switch case" clauses should not have too many lines of code -->
+            <Key>S1151</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>max</Key>
+                    <Value>8</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- String literals should not be duplicated -->
+            <Key>S1192</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>threshold</Key>
+                    <Value>3</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Classes should not be coupled to too many other classes -->
+            <!-- S1200 is disabled in favour for CA1506. -->
+            <Key>S1200</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>max</Key>
+                    <Value>30</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Control flow statements "if", "switch", "for", "foreach", "while", "do" and "try" should not be nested too deeply -->
+            <Key>S134</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>maximumNestingLevel</Key>
+                    <Value>3</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Functions should not have too many lines of code -->
+            <!-- S138 is disabled in favour for CA1505. -->
+            <Key>S138</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>max</Key>
+                    <Value>80</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Track lack of copyright and license headers -->
+            <!-- S1451 is disabled in favour for IDE0073. -->
+            <Key>S1451</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>isRegularExpression</Key>
+                    <Value>false</Value>
+                </Parameter>
+                <Parameter>
+                    <Key>headerFormat</Key>
+                    <Value>// Copyright SwifterTheDragon, 2025. All Rights Reserved.\n// SPDX-License-Identifier: MIT</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- "switch" statements should not have too many "case" clauses -->
+            <Key>S1479</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>maximum</Key>
+                    <Value>30</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Methods and properties should not be too complex -->
+            <!-- S1541 is disabled in favour for CA1505. -->
+            <Key>S1541</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>maximumFunctionComplexityThreshold</Key>
+                    <Value>10</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Hard-coded credentials are security-sensitive -->
+            <Key>S2068</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>credentialWords</Key>
+                    <Value>password, passwd, pwd, passphrase</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Enumeration types should comply with a naming convention -->
+            <!-- S2342 is disabled in favour for naming rules, CA1714 & CA1717. -->
+            <Key>S2342</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>format</Key>
+                    <Value>^([A-Z]{1,3}[a-z0-9]+)*([A-Z]{2})?$</Value>
+                </Parameter>
+                <Parameter>
+                    <Key>flagsAttributeFormat</Key>
+                    <Value>^([A-Z]{1,3}[a-z0-9]+)*([A-Z]{2})?s$</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Types and methods should not have too many generic parameters -->
+            <Key>S2436</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>max</Key>
+                    <Value>2</Value>
+                </Parameter>
+                <Parameter>
+                    <Key>maxMethod</Key>
+                    <Value>3</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Cognitive Complexity of methods should not be too high -->
+            <Key>S3776</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>threshold</Key>
+                    <Value>15</Value>
+                </Parameter>
+                <Parameter>
+                    <Key>propertyThreshold</Key>
+                    <Value>3</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Allowing requests with excessive content length is security-sensitive -->
+            <Key>S5693</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>fileUploadSizeLimit</Key>
+                    <Value>8_000_000</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- Hard-coded secrets are security-sensitive -->
+            <Key>S6418</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>secretWords</Key>
+                    <Value>api[_\-]?key, auth, credential, secret, token</Value>
+                </Parameter>
+                <Parameter>
+                    <Key>randomnessSensibility</Key>
+                    <Value>3</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+        <Rule>
+            <!-- The code block contains too many logging calls -->
+            <Key>S6664</Key>
+            <Parameters>
+                <Parameter>
+                    <Key>debugThreshold</Key>
+                    <Value>4</Value>
+                </Parameter>
+                <Parameter>
+                    <Key>errorThreshold</Key>
+                    <Value>2</Value>
+                </Parameter>
+                <Parameter>
+                    <Key>informationThreshold</Key>
+                    <Value>1</Value>
+                </Parameter>
+                <Parameter>
+                    <Key>warningThreshold</Key>
+                    <Value>1</Value>
+                </Parameter>
+            </Parameters>
+        </Rule>
+    </Rules>
+</AnalysisInput>
+<!-- Copyright SwifterTheDragon, 2025. All Rights Reserved. -->
