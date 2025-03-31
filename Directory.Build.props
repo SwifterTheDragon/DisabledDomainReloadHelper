@@ -22,4 +22,11 @@
             <_Parameter1>true</_Parameter1>
         </AssemblyAttribute>
     </ItemGroup>
+    <PropertyGroup>
+        <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
+    </PropertyGroup>
+    <ItemGroup>
+        <AdditionalFiles Include="$(RepositoryRoot)SonarLint.xml" />
+        <AdditionalFiles Include="$(RepositoryRoot)CodeMetricsConfig.txt" />
+    </ItemGroup>
 </Project>
