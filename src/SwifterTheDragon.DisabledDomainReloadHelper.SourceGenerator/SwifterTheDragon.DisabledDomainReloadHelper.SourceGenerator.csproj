@@ -4,4 +4,9 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
+    <ItemGroup>
+        <!-- Unity 6 documentation states that source generators must use Microsoft.CodeAnalysis.CSharp 4.3 to work with Unity. -->
+        <!-- See https://docs.unity3d.com/6000.0/Documentation/Manual/create-source-generator.html for details. -->
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" />
+    </ItemGroup>
 </Project>
