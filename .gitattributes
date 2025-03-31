@@ -1,0 +1,17 @@
+# Copyright SwifterTheDragon, 2025. All Rights Reserved.
+# SPDX-License-Identifier: MIT
+# This .gitattributes file should be placed in the root directory of the repository.
+# SwifterTheDragon's .gitattributes for DisabledDomainReloadHelper.
+# Please do not overwrite this file with a template!
+
+# gitattributes docs: https://www.git-scm.com/docs/gitattributes
+
+# Lines starting with '#' are treated as comment lines.
+
+# Set default behaviour to automatically normalize line endings.
+* text=auto
+
+# Set file behaviour to treat as text & diff as C# source code.
+*.cs text diff=csharp
+
+# Copyright SwifterTheDragon, 2025. All Rights Reserved.
