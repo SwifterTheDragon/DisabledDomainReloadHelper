@@ -3,6 +3,7 @@
 <Project>
     <PropertyGroup>
         <!-- Do not add <AssemblyVersion> here. Each assembly should receive a unique assembly version. -->
+        <Authors>SwifterTheDragon</Authors>
         <Company>SwifterTheDragon</Company>
         <Copyright>Copyright SwifterTheDragon, 2025. All Rights Reserved.</Copyright>
         <!-- Do not add <Description> here. Each assembly should receive a unique description. -->
@@ -10,6 +11,7 @@
         <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
         <InformationalVersion>1.0.0</InformationalVersion>
         <Product>DisabledDomainReloadHelper</Product>
+        <Title>$(AssemblyName)</Title>
     </PropertyGroup>
     <ItemGroup>
         <AssemblyAttribute Include="System.CLSCompliantAttribute">
