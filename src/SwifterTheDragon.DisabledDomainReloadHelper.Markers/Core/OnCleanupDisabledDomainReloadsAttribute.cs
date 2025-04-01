@@ -4,7 +4,7 @@
 using System;
 using System.Diagnostics;
 
-namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
+namespace SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core
 {
     /// <summary>
     /// Methods decorated with this attribute will be invoked when disabled

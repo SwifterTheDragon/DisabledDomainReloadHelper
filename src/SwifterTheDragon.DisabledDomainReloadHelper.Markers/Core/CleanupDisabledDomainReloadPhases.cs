@@ -1,7 +1,7 @@
 // Copyright SwifterTheDragon, 2025. All Rights Reserved.
 // SPDX-License-Identifier: MIT
 
-namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
+namespace SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core
 {
     /// <summary>
     /// Specifies which phase disabled domain reload cleanup should occur.
