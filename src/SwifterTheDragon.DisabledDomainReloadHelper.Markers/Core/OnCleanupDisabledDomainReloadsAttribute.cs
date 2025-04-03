@@ -11,7 +11,9 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core
     /// domain reload cleanup is needed.
     /// </summary>
     [AttributeUsage(
-        validOn: AttributeTargets.Method)]
+        validOn: AttributeTargets.Method,
+        AllowMultiple = false,
+        Inherited = false)]
     [DebuggerDisplay(
         value: "{DebuggerDisplay,nq}")]
     public sealed class OnCleanupDisabledDomainReloadsAttribute : Attribute
