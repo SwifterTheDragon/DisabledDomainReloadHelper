@@ -1,10 +1,10 @@
-<!-- Copyright SwifterTheDragon and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved. -->
+<!-- Copyright SwifterTheDragon, and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved. -->
 <!-- SPDX-License-Identifier: MIT -->
 <Project>
     <PropertyGroup>
         <!-- Do not add <AssemblyVersion> here. Each assembly should receive a unique assembly version. -->
         <Company>SwifterTheDragon</Company>
-        <Copyright>Copyright SwifterTheDragon and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.</Copyright>
+        <Copyright>Copyright SwifterTheDragon, and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.</Copyright>
         <!-- Do not add <Description> here. Each assembly should receive a unique description. -->
         <!-- Do not add <FileVersion> here. Each assembly should receive a unique file version. -->
         <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>

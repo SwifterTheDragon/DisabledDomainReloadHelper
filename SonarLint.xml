@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright SwifterTheDragon and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved. -->
+<!-- Copyright SwifterTheDragon, and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved. -->
 <!-- SPDX-License-Identifier: MIT -->
 <!-- This SonarLint.xml file should be placed in the root directory of the repository. -->
 <!-- SwifterTheDragon's SonarLint.xml for DisabledDomainReloadHelper. -->
@@ -163,7 +163,7 @@
                 </Parameter>
                 <Parameter>
                     <Key>headerFormat</Key>
-                    <Value>// Copyright SwifterTheDragon and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.\n// SPDX-License-Identifier: MIT</Value>
+                    <Value>// Copyright SwifterTheDragon, and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.\n// SPDX-License-Identifier: MIT</Value>
                 </Parameter>
             </Parameters>
         </Rule>
@@ -289,4 +289,4 @@
         </Rule>
     </Rules>
 </AnalysisInput>
-<!-- Copyright SwifterTheDragon and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved. -->
+<!-- Copyright SwifterTheDragon, and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved. -->

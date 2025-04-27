@@ -1,4 +1,4 @@
-// Copyright SwifterTheDragon and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.
+// Copyright SwifterTheDragon, and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.
 // SPDX-License-Identifier: MIT
 
 namespace SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core
