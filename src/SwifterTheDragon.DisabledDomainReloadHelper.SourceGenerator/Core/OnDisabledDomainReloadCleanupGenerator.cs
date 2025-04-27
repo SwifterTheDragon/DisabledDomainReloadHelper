@@ -479,7 +479,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
             AppendFullLine();
             headerBuilder.AppendLine()
                 .AppendLine(
-                    value: "// Copyright SwifterTheDragon and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.")
+                    value: "// Copyright SwifterTheDragon, and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.")
                 .AppendLine(
                     value: "// SPDX-License-Identifier: MIT")
                 .AppendLine();
