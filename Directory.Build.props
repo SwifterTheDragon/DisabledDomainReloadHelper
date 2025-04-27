@@ -23,6 +23,9 @@
         <AssemblyAttribute Include="System.Runtime.InteropServices.ComVisibleAttribute">
             <_Parameter1>true</_Parameter1>
         </AssemblyAttribute>
+        <AssemblyAttribute Include="System.Resources.NeutralResourcesLanguageAttribute">
+            <_Parameter1>en-001</_Parameter1>
+        </AssemblyAttribute>
     </ItemGroup>
     <PropertyGroup>
         <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
