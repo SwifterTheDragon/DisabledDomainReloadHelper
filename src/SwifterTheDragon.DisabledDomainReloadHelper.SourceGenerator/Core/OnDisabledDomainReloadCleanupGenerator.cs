@@ -150,7 +150,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
         /// The data provided by the pipeline.
         /// </param>
         /// <returns>
-        /// Does <c><paramref name="model"/></c> contain eitger
+        /// Does <c><paramref name="model"/></c> contain either
         /// <c><see cref="CleanupDisabledDomainReloadPhases.OnExitPlayMode"/></c>,
         /// or
         /// <c><see cref="CleanupDisabledDomainReloadPhases.OnEnterPlayMode"/></c>?
