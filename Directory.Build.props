@@ -10,7 +10,7 @@
         <!-- Do not add <FileVersion> here. Each assembly should receive a unique file version. -->
         <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
         <InformationalVersion>1.0.0</InformationalVersion>
-        <Product>DisabledDomainReloadHelper</Product>
+        <Product>SwifterTheDragon.DisabledDomainReloadHelper</Product>
         <Title>$(AssemblyName)</Title>
     </PropertyGroup>
     <ItemGroup>
