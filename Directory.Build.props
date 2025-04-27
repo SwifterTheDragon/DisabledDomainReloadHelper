@@ -3,7 +3,6 @@
 <Project>
     <PropertyGroup>
         <!-- Do not add <AssemblyVersion> here. Each assembly should receive a unique assembly version. -->
-        <Authors>SwifterTheDragon</Authors>
         <Company>SwifterTheDragon</Company>
         <Copyright>Copyright SwifterTheDragon and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.</Copyright>
         <!-- Do not add <Description> here. Each assembly should receive a unique description. -->
@@ -12,6 +11,12 @@
         <InformationalVersion>1.0.0</InformationalVersion>
         <Product>SwifterTheDragon.DisabledDomainReloadHelper</Product>
         <Title>$(AssemblyName)</Title>
+        <Authors>SwifterTheDragon</Authors>
+        <PackageProjectUrl>https://github.com/SwifterTheDragon/DisabledDomainReloadHelper</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/SwifterTheDragon/DisabledDomainReloadHelper</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
     <ItemGroup>
         <AssemblyAttribute Include="System.CLSCompliantAttribute">
