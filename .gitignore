@@ -1,4 +1,4 @@
-# Copyright SwifterTheDragon, 2025. All Rights Reserved.
+# Copyright SwifterTheDragon and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.
 # SPDX-License-Identifier: MIT
 # This .gitignore file should be placed in the root directory of the repository.
 # SwifterTheDragon's .gitignore for DisabledDomainReloadHelper.
@@ -409,4 +409,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# Copyright SwifterTheDragon, 2025. All Rights Reserved.
+# Copyright SwifterTheDragon and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.
