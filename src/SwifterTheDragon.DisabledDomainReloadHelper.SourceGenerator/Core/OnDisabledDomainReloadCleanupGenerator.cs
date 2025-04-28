@@ -6,6 +6,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 using SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core;
 using System;
+using System.Diagnostics;
 using System.Text;
 using System.Threading;
 
@@ -47,8 +48,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
         {
             get
             {
-                return typeof(OnDisabledDomainReloadCleanupGenerator).Assembly.GetName().Version.ToString(
-                    fieldCount: 4);
+                return FileVersionInfo.GetVersionInfo(typeof(OnDisabledDomainReloadCleanupGenerator).Assembly.Location).ProductVersion;
             }
         }
         /// <summary>
