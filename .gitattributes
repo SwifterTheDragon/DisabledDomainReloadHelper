@@ -8,7 +8,7 @@
 
 # Lines starting with '#' are treated as comment lines.
 
-# Set default behaviour to automatically normalize line endings.
+# Set default behaviour to automatically normalise line endings.
 * text=auto
 
 # Set file behaviour to treat as text & diff as C# source code.
