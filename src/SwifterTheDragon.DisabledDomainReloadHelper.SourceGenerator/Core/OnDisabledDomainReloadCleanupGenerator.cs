@@ -422,7 +422,6 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
                     value: "    }")
                 .AppendLine(
                     value: "}")
-                .AppendLine()
                 .AppendLine(
                     value: "#endif")
                 .AppendLine(
