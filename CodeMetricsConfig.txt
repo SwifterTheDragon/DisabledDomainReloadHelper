@@ -1,7 +1,7 @@
 # Copyright SwifterTheDragon, and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.
 # SPDX-License-Identifier: MIT
 # This CodeMetricsConfig.txt file should be placed in the root directory of the repository.
-# SwifterTheDragon's CodeMetricsConfig.txt for DisabledDomainReloadHelper.
+# SwifterTheDragon's CodeMetricsConfig.txt for SwifterTheDragon.DisabledDomainReloadHelper.
 # Please do not overwrite this file with a template!
 
 # Formatting:
