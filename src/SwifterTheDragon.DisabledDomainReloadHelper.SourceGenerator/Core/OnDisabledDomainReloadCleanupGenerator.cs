@@ -6,6 +6,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 using SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading;
@@ -68,7 +69,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
         {
             IncrementalValuesProvider<(
                 string generatedNamespace,
-                string generatedTypeName,
+                List<string> generatedTypeNames,
                 string generatedMethodName,
                 CleanupDisabledDomainReloadPhases phase)> pipeline = context.SyntaxProvider.ForAttributeWithMetadataName(
                     fullyQualifiedMetadataName: MarkerAttributeName,
@@ -76,7 +77,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
                     transform: Transform);
             IncrementalValuesProvider<(
                 string generatedNamespace,
-                string generatedTypeName,
+                List<string> generatedTypeNames,
                 string generatedMethodName,
                 CleanupDisabledDomainReloadPhases phase)> pipeline2 = pipeline.Where(
                     predicate: PipelinePredicate);
@@ -120,7 +121,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
         /// </returns>
         private static (
             string generatedNamespace,
-            string generatedTypeName,
+            List<string> generatedTypeNames,
             string generatedMethodName,
             CleanupDisabledDomainReloadPhases phase)
         Transform(
@@ -131,12 +132,27 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
             string generatedNamespace = containingType.ContainingNamespace?.ToDisplayString(
                 format: SymbolDisplayFormat.FullyQualifiedFormat.WithGlobalNamespaceStyle(
                     style: SymbolDisplayGlobalNamespaceStyle.OmittedAsContaining));
-            string generatedTypeName = containingType.Name;
+            var generatedTypeNames = new List<string>
+            {
+                containingType.Name
+            };
+            INamedTypeSymbol currentOuterType = containingType.ContainingType;
+            if (currentOuterType != null)
+            {
+                do
+                {
+                    generatedTypeNames.Add(
+                        item: currentOuterType.Name);
+                    currentOuterType = currentOuterType.ContainingType;
+                }
+                while (currentOuterType != null);
+                generatedTypeNames.Reverse();
+            }
             string generatedMethodName = context.TargetSymbol.Name;
             var phase = (CleanupDisabledDomainReloadPhases)context.Attributes[0].ConstructorArguments[0].Value;
             return (
                 generatedNamespace,
-                generatedTypeName,
+                generatedTypeNames,
                 generatedMethodName,
                 phase);
         }
@@ -158,7 +174,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
         private static bool PipelinePredicate(
             (
                 string generatedNamespace,
-                string generatedTypeName,
+                List<string> generatedTypeNames,
                 string generatedMethodName,
                 CleanupDisabledDomainReloadPhases phase) model)
         {
@@ -181,11 +197,11 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
             SourceProductionContext context,
             (
                 string generatedNamespace,
-                string generatedTypeName,
+                List<string> generatedTypeNames,
                 string generatedMethodName,
                 CleanupDisabledDomainReloadPhases phase) model)
         {
-            string uniqueIdentifier = model.generatedTypeName
+            string uniqueIdentifier = model.generatedTypeNames[0]
                 + '.'
                 + model.generatedMethodName;
             StringBuilder sourceBuilder = new StringBuilder()
@@ -251,7 +267,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
                 .Append(
                     value: "    internal static class ")
                 .Append(
-                    value: model.generatedTypeName)
+                    value: model.generatedTypeNames[0])
                 .Append(
                     value: '_')
                 .AppendLine(
@@ -397,7 +413,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
                 .Append(
                     value: "            _ = typeof(")
                 .Append(
-                    value: model.generatedTypeName)
+                    value: model.generatedTypeNames[0])
                 .AppendLine(
                     value: ").GetMethod(")
                 .Append(
