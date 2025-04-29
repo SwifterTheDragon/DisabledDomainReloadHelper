@@ -8,6 +8,7 @@ using SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading;
 
@@ -20,6 +21,94 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
     [Generator]
     internal sealed class OnDisabledDomainReloadCleanupGenerator : IIncrementalGenerator
     {
+        #region Nested Types
+        #region EquatableList<T> Legal Attribution
+        /* Solely the type EquatableList<T>,
+         * and its implementation originate from:
+        https://github.com/dotnet/roslyn/blob/e6d1a8c05334b36f2c9ecb515f1e35b137e16adb/docs/features/incremental-generators.cookbook.md?plain=1#L808C5-L848C2
+        and is therefore subject to the following license:
+
+The MIT License (MIT)
+
+Copyright (c) .NET Foundation and Contributors
+
+All rights reserved.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+         */
+        #endregion EquatableList<T> Legal Attribution
+        private sealed class EquatableList<T> : List<T>
+        {
+            #region Methods
+            public static bool operator ==(EquatableList<T> list1, EquatableList<T> list2)
+            {
+                return ReferenceEquals(
+                    objA: list1,
+                    objB: list2)
+                    || (!(list1 is null)
+                        && !(list2 is null)
+                        && list1.Equals(
+                            obj: list2));
+            }
+            public static bool operator !=(EquatableList<T> list1, EquatableList<T> list2)
+            {
+                return !(list1 == list2);
+            }
+            public override bool Equals(
+                object obj)
+            {
+                return Equals(
+                    other: obj as EquatableList<T>);
+            }
+            public override int GetHashCode()
+            {
+                return this.Select(
+                    selector: (item) =>
+                    {
+                        return item?.GetHashCode() ?? 0;
+                    })
+                    .Aggregate(
+                        func: (x, y) =>
+                        {
+                            return x ^ y;
+                        });
+            }
+            internal bool Equals(
+                IList<T> other)
+            {
+                if (other is null || Count != other.Count)
+                {
+                    return false;
+                }
+                for (int index = 0; index < Count; index++)
+                {
+                    if (!EqualityComparer<T>.Default.Equals(
+                        x: this[index],
+                        y: other[index]))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            #endregion Methods
+        }
+        #endregion Nested Types
         #region Fields & Properties
         /// <summary>
         /// The fully qualified metadata name for the marker attribute for this
@@ -69,7 +158,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
         {
             IncrementalValuesProvider<(
                 string generatedNamespace,
-                List<string> generatedTypeNames,
+                EquatableList<string> generatedTypeNames,
                 string generatedMethodName,
                 CleanupDisabledDomainReloadPhases phase)> pipeline = context.SyntaxProvider.ForAttributeWithMetadataName(
                     fullyQualifiedMetadataName: MarkerAttributeName,
@@ -77,7 +166,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
                     transform: Transform);
             IncrementalValuesProvider<(
                 string generatedNamespace,
-                List<string> generatedTypeNames,
+                EquatableList<string> generatedTypeNames,
                 string generatedMethodName,
                 CleanupDisabledDomainReloadPhases phase)> pipeline2 = pipeline.Where(
                     predicate: PipelinePredicate);
@@ -121,7 +210,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
         /// </returns>
         private static (
             string generatedNamespace,
-            List<string> generatedTypeNames,
+            EquatableList<string> generatedTypeNames,
             string generatedMethodName,
             CleanupDisabledDomainReloadPhases phase)
         Transform(
@@ -132,7 +221,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
             string generatedNamespace = containingType.ContainingNamespace?.ToDisplayString(
                 format: SymbolDisplayFormat.FullyQualifiedFormat.WithGlobalNamespaceStyle(
                     style: SymbolDisplayGlobalNamespaceStyle.OmittedAsContaining));
-            var generatedTypeNames = new List<string>
+            var generatedTypeNames = new EquatableList<string>
             {
                 containingType.Name
             };
@@ -174,7 +263,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
         private static bool PipelinePredicate(
             (
                 string generatedNamespace,
-                List<string> generatedTypeNames,
+                EquatableList<string> generatedTypeNames,
                 string generatedMethodName,
                 CleanupDisabledDomainReloadPhases phase) model)
         {
@@ -197,7 +286,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
             SourceProductionContext context,
             (
                 string generatedNamespace,
-                List<string> generatedTypeNames,
+                EquatableList<string> generatedTypeNames,
                 string generatedMethodName,
                 CleanupDisabledDomainReloadPhases phase) model)
         {
