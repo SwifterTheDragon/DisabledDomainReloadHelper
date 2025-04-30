@@ -218,9 +218,9 @@ SOFTWARE.
             CancellationToken cancellationToken)
         {
             INamedTypeSymbol containingType = context.TargetSymbol.ContainingType;
-            string generatedNamespace = containingType.ContainingNamespace?.ToDisplayString(
+            string generatedNamespace = containingType.ContainingNamespace.ToDisplayString(
                 format: SymbolDisplayFormat.FullyQualifiedFormat.WithGlobalNamespaceStyle(
-                    style: SymbolDisplayGlobalNamespaceStyle.OmittedAsContaining));
+                    style: SymbolDisplayGlobalNamespaceStyle.Omitted));
             var generatedTypeNames = new EquatableList<string>
             {
                 containingType.Name
@@ -338,15 +338,19 @@ SOFTWARE.
                     value: "using System.Reflection;")
                 .AppendLine(
                     value: "using UnityEditor;")
-                .AppendLine()
-                .Append(
+                .AppendLine();
+            if (!string.IsNullOrWhiteSpace(
+                value: model.generatedNamespace))
+            {
+                sourceBuilder.Append(
                     value: "namespace ")
-                .AppendLine(
-                    value: model.generatedNamespace)
-                .AppendLine(
-                    value: "{")
-                .AppendLine(
-                    value: "    /// <summary>")
+                    .AppendLine(
+                        value: model.generatedNamespace)
+                    .AppendLine(
+                        value: "{");
+            }
+            sourceBuilder.AppendLine(
+                value: "    /// <summary>")
                 .AppendLine(
                     value: "    /// Invokes")
                 .Append(
@@ -576,11 +580,15 @@ SOFTWARE.
                 .AppendLine(
                     value: "        #endregion Methods")
                 .AppendLine(
-                    value: "    }")
-                .AppendLine(
-                    value: "}")
-                .AppendLine(
-                    value: "#endif")
+                    value: "    }");
+            if (!string.IsNullOrWhiteSpace(
+                value: model.generatedNamespace))
+            {
+                sourceBuilder.AppendLine(
+                    value: "}");
+            }
+            sourceBuilder.AppendLine(
+                value: "#endif")
                 .AppendLine(
                     value: "#endregion Editor Only")
                 .Append(
