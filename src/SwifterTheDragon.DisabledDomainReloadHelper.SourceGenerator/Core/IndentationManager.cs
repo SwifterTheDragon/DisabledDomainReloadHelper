@@ -100,7 +100,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
                 value: input);
         }
         /// <summary>
-        /// Appends a blank line.
+        /// Appends a line terminator.
         /// </summary>
         internal void AppendLine()
         {
@@ -113,7 +113,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
         /// <param name="input">
         /// The text to append.
         /// </param>
-        internal void AppendLine(
+        internal void AppendLineWithWhiteSpace(
             string input)
         {
             AppendWhiteSpace();
@@ -121,24 +121,37 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
                 value: input);
         }
         /// <summary>
-        /// Invokes <c><see cref="AppendLine(string)"/></c> with "<c>{</c>",
+        /// Appends <c><paramref name="input"/></c>, followed by a line
+        /// terminator.
+        /// </summary>
+        /// <param name="input">
+        /// The text to append.
+        /// </param>
+        internal void AppendLineWithoutWhiteSpace(
+            string input)
+        {
+            i_builder.AppendLine(
+                value: input);
+        }
+        /// <summary>
+        /// Invokes <c><see cref="AppendLineWithWhiteSpace(string)"/></c> with "<c>{</c>",
         /// then invokes <c><see cref="IncrementIndentation"/></c>.
         /// </summary>
         internal void OpenBlock()
         {
-            AppendLine(
+            AppendLineWithWhiteSpace(
                 input: "{");
             IncrementIndentation();
         }
         /// <summary>
         /// Invokes <c><see cref="DecrementIndentation"/></c>,
-        /// then invokes <c><see cref="AppendLine(string)"/></c> with
+        /// then invokes <c><see cref="AppendLineWithWhiteSpace(string)"/></c> with
         /// "<c>}</c>".
         /// </summary>
         internal void CloseBlock()
         {
             DecrementIndentation();
-            AppendLine(
+            AppendLineWithWhiteSpace(
                 input: "}");
         }
         /// <summary>
