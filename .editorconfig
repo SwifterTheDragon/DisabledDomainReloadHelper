@@ -2437,16 +2437,19 @@ dotnet_diagnostic.CA2265.severity = warning
 
 # https://github.com/dotnet/roslyn-analyzers
 
+# Please note that certain packages have moved into the Roslyn repository:
+# https://github.com/dotnet/roslyn
+
 # ! Microsoft.CodeAnalysis.AnalyzerUtilities does not provide any code analysis.
 # This package is irrelevant.
-# https://github.com/dotnet/roslyn-analyzers/tree/main/src/Microsoft.CodeAnalysis.AnalyzerUtilities
+# https://github.com/dotnet/roslyn/tree/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.AnalyzerUtilities
 
 # Microsoft.CodeAnalysis.Analyzers
 # Please see the [RoslynAnalysers/**.cs] section for Microsoft.CodeAnalysis.Analyzers configuration.
 
 # Microsoft.CodeAnalysis.BannedApiAnalyzers
 # https://www.nuget.org/packages/Microsoft.CodeAnalysis.BannedApiAnalyzers
-# https://github.com/dotnet/roslyn-analyzers/blob/main/src/Microsoft.CodeAnalysis.BannedApiAnalyzers/Microsoft.CodeAnalysis.BannedApiAnalyzers.md
+# https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.BannedApiAnalyzers/Microsoft.CodeAnalysis.BannedApiAnalyzers.md
 
 # RS0030: Do not use banned APIs
 # Banned APIs are not to be used.
@@ -2463,31 +2466,31 @@ dotnet_diagnostic.RS0035.severity = warning
 
 # ! Microsoft.CodeAnalysis.Metrics does not provide any code analysis.
 # This package is irrelevant.
-# https://github.com/dotnet/roslyn-analyzers/tree/main/src/Tools/Metrics
+# https://github.com/dotnet/roslyn/tree/main/src/RoslynAnalyzers/Tools/Metrics
 
 # ! Microsoft.CodeAnalysis.PerformanceSensitiveAnalyzers is currently an internal-only package reserved for private consumption.
 # This analyser will not be used.
-# https://github.com/dotnet/roslyn-analyzers/tree/main/src/PerformanceSensitiveAnalyzers
+# https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/PerformanceSensitiveAnalyzers/Microsoft.CodeAnalysis.PerformanceSensitiveAnalyzers.md
 
 # ! Microsoft.CodeAnalysis.PublicApiAnalyzers is for public APIs only.
 # This analyser will not be used.
-# https://github.com/dotnet/roslyn-analyzers?tab=readme-ov-file#microsoftcodeanalysispublicapianalyzers
+# https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/PublicApiAnalyzers/PublicApiAnalyzers.Help.md
 
 # ! Microsoft.CodeAnalysis.ResxSourceGenerator does not provide any code analysis.
 # This package is irrelevant.
-# https://github.com/dotnet/roslyn-analyzers/tree/main/src/Microsoft.CodeAnalysis.ResxSourceGenerator
+# https://github.com/dotnet/roslyn/tree/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.ResxSourceGenerator
 
 # ! Microsoft.CodeAnalysis.RulesetToEditorconfigConverter does not provide any code analysis.
 # This package is irrelevant.
-# https://github.com/dotnet/roslyn-analyzers/tree/main/src/Tools/RulesetToEditorconfigConverter
+# https://github.com/dotnet/roslyn/tree/main/src/RoslynAnalyzers/Tools/RulesetToEditorconfigConverter
 
 # ! Roslyn.Diagnostics.Analyzers is for the Roslyn project, not general consumption.
 # This package is irrelevant.
-# https://github.com/dotnet/roslyn-analyzers?tab=readme-ov-file#roslyndiagnosticsanalyzers
+# https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Roslyn.Diagnostics.Analyzers/Roslyn.Diagnostics.Analyzers.md
 
-# ! Text.Analyzers is unmentioned in the dotnet/roslyn-analyzers readme, and has been described as being not yet ready for release.
+# ! Text.Analyzers is currently an internal-only package reserved for private consumption, and has been described as being not yet ready for release.
 # This analyser will not be used.
-# https://github.com/dotnet/roslyn-analyzers/tree/main/src/Text.Analyzers
+# https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Text.Analyzers/Text.Analyzers.md
 
 # End of https://github.com/dotnet/roslyn-analyzers & first-party analysers.
 # Resume https://github.com/Cybermaxs/awesome-analyzers
@@ -8261,7 +8264,7 @@ dotnet_diagnostic.HLQ013.severity = warning
 
 # Microsoft.CodeAnalysis.Analyzers, which should only be used with projects that provide Roslyn Analysers.
 # https://www.nuget.org/packages/Microsoft.CodeAnalysis.Analyzers
-# https://github.com/dotnet/roslyn-analyzers?tab=readme-ov-file#microsoftcodeanalysisanalyzers
+# https://github.com/dotnet/roslyn/tree/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers
 
 # RS1001: Missing diagnostic analyser attribute
 # Analyser types without the DiagnosticAnalyserAttribute will be ignored by the analysis engine.
