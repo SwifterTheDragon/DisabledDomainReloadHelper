@@ -6269,7 +6269,7 @@ roslynator_refactoring.invert_is_expression.enabled = true
 roslynator_refactoring.invert_operator.enabled = true
 # RR0083: Notify when property changes
 roslynator_refactoring.notify_when_property_changes.enabled = true
-# RR0084: Parenthesize expression
+# RR0084: Parenthesise expression
 roslynator_refactoring.parenthesize_expression.enabled = true
 # RR0085: Promote local variable to parameter
 roslynator_refactoring.promote_local_variable_to_parameter.enabled = true
