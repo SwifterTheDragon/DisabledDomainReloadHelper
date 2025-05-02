@@ -8249,7 +8249,7 @@ dotnet_diagnostic.HLQ013.severity = warning
 # This analyser will not be used.
 # https://www.nuget.org/packages/DotNetAnalyzers.DocumentationAnalyzers
 
-# ! IDisposableAnalyzers has a concerningly high number of false positives mentioned in open issues on the source repository.
+# ! IDisposableAnalyzers has a concerningly high number of false positives mentioned in open issues on the repository.
 # Certain documentation pages are also unfinished.
 # This analyser will not be used.
 # https://www.nuget.org/packages/IDisposableAnalyzers/
