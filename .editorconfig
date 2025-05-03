@@ -2444,8 +2444,218 @@ dotnet_diagnostic.CA2265.severity = warning
 # This package is irrelevant.
 # https://github.com/dotnet/roslyn/tree/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.AnalyzerUtilities
 
-# Microsoft.CodeAnalysis.Analyzers
-# Please see the [RoslynAnalysers/**.cs] section for Microsoft.CodeAnalysis.Analyzers configuration.
+# Roslyn Analyser C# files
+[RoslynAnalysers/**.cs]
+
+# Microsoft.CodeAnalysis.Analyzers, which should only be used with projects that provide Roslyn Analysers.
+# https://www.nuget.org/packages/Microsoft.CodeAnalysis.Analyzers
+# https://github.com/dotnet/roslyn/tree/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers
+
+# RS1001: Missing diagnostic analyser attribute
+# Analyser types without the DiagnosticAnalyserAttribute will be ignored by the analysis engine.
+# Please keep this rule's severity above suggestion to actively avoid missing diagnostic analyser attributes.
+dotnet_diagnostic.RS1001.severity = warning
+# RS1002: Missing kind argument when registering an analyser action
+# Failing to specify at least one syntax will cause the registered action to never be invoked during analysis.
+# Please keep this rule's severity above suggestion to actively avoid missing kind arguments.
+dotnet_diagnostic.RS1002.severity = warning
+# RS1003: Unsupported SymbolKind argument when registering a symbol analyser action
+# Only supported SymbolKinds should be used.
+# Please keep this rule's severity above suggestion to actively avoid unsupported SymbolKinds.
+dotnet_diagnostic.RS1003.severity = warning
+# RS1004: Recommend adding language support to diagnostic analyser
+# Analyser assemblies that don't use language-specific assemblies should be explicitly labelled to support multiple languages.
+# Please keep this rule's severity above suggestion to actively encourage adding multi-language support to diagnostic analysers.
+dotnet_diagnostic.RS1004.severity = warning
+# RS1005: ReportDiagnostic invoked with an unsupported DiagnosticDescriptor
+# Only supportred DiagnosticDescriptors should be used, otherwise the reported diagnostic will be filtered out by the analysis engine.
+dotnet_diagnostic.RS1005.severity = warning
+# RS1006: Invalid type argument for DiagnosticAnalyser's Register method
+# Only valid type arguments should be used, otherwise the registered analyser action can never be invoked during analysis.
+# Please keep this rule's severity above suggestion to actively avoid invalid type arguments.
+dotnet_diagnostic.RS1006.severity = warning
+# RS1007: Provide localisable arguments to diagnostic descriptor constructor
+# Diagnostic analysers and its reported diagnostics are not localisable unless localisable arguments are provided.
+# Please keep this rule's severity above suggestion to actively encourage localisable diagnostic descriptors.
+dotnet_diagnostic.RS1007.severity = warning
+# RS1008: Avoid storing per-compilation data into the fields of a diagnostic analyser
+# Doing so may cause stale compilations to stay alive and cause memory leaks.
+# Please keep this rule's severity above suggestion to actively avoid memory leaks.
+dotnet_diagnostic.RS1008.severity = warning
+# RS1009: Only internal implementations of this interface are allowed
+# Unintended implementations could result in source or binary compatibility issues with a future version of the interface.
+# Please keep this rule's severity above warning to avoid future source or binary compatibility issues.
+dotnet_diagnostic.RS1009.severity = error
+# RS1010: Create code actions should have a unique EquivalenceKey for FixAll occurrences support
+# RS1011: Use code actions that have a unique EquivalenceKey for FixAll occurrences support
+# Doing so enables fixing all diagnostics in the required scope.
+# Please keep these rules' severities above suggestion to actively encourage enabling fixing all diagnostics.
+dotnet_diagnostic.RS1010.severity = warning
+dotnet_diagnostic.RS1011.severity = warning
+# RS1012: Start action has no registered actions
+# Start actions should have at least one action registered.
+# Please keep this rule's severity above suggestion to actively avoid start actions with no registered actions.
+dotnet_diagnostic.RS1012.severity = warning
+# RS1013: Start action has no registered non-end actions
+# Start actions should have at least one non-end action registered.
+# Please keep this rule's severity above suggestion to actively avoid start actions with no non-end registered actions.
+dotnet_diagnostic.RS1013.severity = warning
+# RS1014: Do not ignore values returned by methods on immutable objects
+# Ignoring values returned by methods on immutable objects results in redundant code.
+# Please keep this rule's severity above suggestion to actively avoid redundant code.
+dotnet_diagnostic.RS1014.severity = warning
+# RS1015: Provide non-null 'helpLinkUri' value to diagnostic descriptor constructor
+# Every analyser should have a helpLinkUri specified.
+# Please keep this rule's severity above suggestion to actively avoid non-null helpLinkUris.
+dotnet_diagnostic.RS1015.severity = warning
+# RS1016: Code fix providers should provide FixAll support
+# Supporting FixAll enables users to fix multiple instances of the underlying diagnostic with a single code fix.
+# Please keep this rule's severity above suggestion to actively encourage supporting FixAll.
+dotnet_diagnostic.RS1016.severity = warning
+# RS1017: DiagnosticId for analysers must be a non-null constant
+# Only non-null constants should be used for DiagnosticIds for analysers.
+# Please keep this rule's severity above suggestion to actively encourage non-null constants for DiagnosticIds for analysers.
+dotnet_diagnostic.RS1017.severity = warning
+# RS1018: DiagnosticId for analysers must be in specified format
+# Only allowed formats should be used for DiagnosticIds for analysers.
+# Please keep this rule's severity above suggestion to actively encourage using the specified format for DiagnosticIds for analysers.
+dotnet_diagnostic.RS1018.severity = warning
+# RS1019: DiagnosticId must be unique across analysers
+# Only unique DiagnosticIds should be used, even across analysers.
+# Please keep this rule's severity above suggestion to actively encourage unique DiagnosticIds across analysers.
+dotnet_diagnostic.RS1019.severity = warning
+# RS1020: Category for analysers must be from the specified values
+# Only allowed categories should be used for analysers.
+# Please keep this rule's severity above suggestion to actively encourage using allowed categories for analysers.
+dotnet_diagnostic.RS1020.severity = warning
+# RS1021: Invalid entry in analyser category and diagnostic ID range specification file
+# Only valid entries in analyser category and diagnostic ID range specification file should be used.
+# Please keep this rule's severity above suggestion to actively encourage using valid entries in analyser category and diagnostic ID range specification file.
+dotnet_diagnostic.RS1021.severity = warning
+# RS1022: Do not use types from Workspaces assembly in an analyser
+# Using types from Workspace assemblies in an analyser will lead to runtime exceptions during analyser execution in command line builds.
+# Please keep this rule's severity above suggestion to actively avoid runtime exceptions during analyser execution in command line builds.
+dotnet_diagnostic.RS1022.severity = warning
+# RS1023: Upgrade MSBuildWorkspace
+# The newer Microsoft.CodeAnalysis.Workspaces.MSBuild NuGet package should be used instead.
+# Please keep this rule's severity above suggestion to actively encourage upgrading MSBuildWorkspace.
+dotnet_diagnostic.RS1023.severity = warning
+# RS1024: Symbols should be compared for equality
+# Symbols should be compared for equality, not identity.
+# Please keep this rule's severity above suggestion to actively encourage comparing symbols for equality.
+dotnet_diagnostic.RS1024.severity = warning
+# RS1025: Configure generated code analysis
+# Generated code analysis should be configured.
+# Please keep this rule's severity above suggestion to actively encourage configuring generated code analysis.
+dotnet_diagnostic.RS1025.severity = warning
+# RS1026: Enable concurrent execution
+# Concurrent execution should be enabled.
+# Please keep this rule's severity above suggestion to actively encourage enabling concurrent execution.
+dotnet_diagnostic.RS1026.severity = warning
+# RS1027: Types marked with DiagnosticAnalyserAttribute(s) should inherit from DiagnosticAnalyser
+# All types marked with [DiagnosticAnalyser] should inherit from DiagnosticAnalyser.
+# Please keep this rule's severity above suggestion to actively encourage inheriting from DiagnosticAnalyser when a type is marked with [DiagnosticAnalyser].
+dotnet_diagnostic.RS1027.severity = warning
+# RS1028: Provide non-null 'customTags' value to diagnostic descriptor constructor
+# Every Roslyn Analyser should have at least one tag from the WellKnownDiagnosticTags class.
+# Please keep this rule's severity above suggestion to actively encourage adding custom tags to all Roslyn Analysers.
+dotnet_diagnostic.RS1028.severity = warning
+# RS1029: Do not use reserved diagnostic IDs
+# Reserved diagnostic IDs should not be used.
+# Please keep this rule's severity above suggestion to actively avoid using reserved diagnostic IDs.
+dotnet_diagnostic.RS1029.severity = warning
+# RS1030: Do not invoke Compilation.GetSemanticModel() method within a diagnostic analyser
+# Invoking GetSemanticModel is expensive. Consider registering a different analyser action which allows use of a shared SemanticModel.
+# Please keep this rule's severity above suggestion to actively avoid invoking GetSemanticModel.
+dotnet_diagnostic.RS1030.severity = warning
+# RS1031: Define diagnostic title correctly
+# Avoid periods, line returns, and leading or trailing whitespaces in diagnostic titles.
+# Please keep this rule's severity above suggestion to actively encourage defining diagnostic titles correctly.
+dotnet_diagnostic.RS1031.severity = warning
+# RS1032: Define diagnostic message correctly
+# Avoid line returns, leading or trailing whitespace, single sentence with a trailing period, and multi-sentence without a trailing period in diagnostic messages.
+# Please keep this rule's severity above suggestion to actively encourage defining diagnostic messages correctly.
+dotnet_diagnostic.RS1032.severity = warning
+# RS1033: Define diagnostic description correctly
+# Use an ending punctuation sign and avoid leading or trailing whitespace in diagnostic descriptions.
+# Please keep this rule's severity above suggestion to actively encourage defining diagnostic descriptions correctly.
+dotnet_diagnostic.RS1033.severity = warning
+# RS1034: Prefer 'IsKind' for checking syntax kinds
+# IsKind is slightly more efficient at runtime.
+# Please keep this rule's severity above suggestion to actively encourage more performant code.
+dotnet_diagnostic.RS1034.severity = warning
+# RS1035: Do not use APIs banned for analysers
+# Symbols marked as banned for use in analysers should be avoided.
+# Please keep this rule's severity above warning to actively avoid using APIs banned for analysers.
+dotnet_diagnostic.RS1035.severity = error
+# RS1036: Specify analyser banned API enforcement setting
+# A project containing analysers or source generators should set the EnforceExtendedAnalyserRules MSBuild property to true.
+# Please keep this rule's severity to actively encourage specifying the analyser banned API enforcement setting.
+dotnet_diagnostic.RS1036.severity = warning
+# RS1037: Add "CompilationEnd" custom tag to compilation end diagnostic descriptor
+# DiagnosticDescriptor assigned to field is used to report a compilation end diagnostic,
+# but the DiagnosticDescriptor used to initialise it does not pass in the required custom CompilationEnd tag.
+# Please keep this rule's severity above suggestion to actively encourage properly reporting compilation end diagnostics.
+dotnet_diagnostic.RS1037.severity = warning
+# RS1038: Compiler extensions should be implemented in assemblies with compiler-provided references
+# Failure to do so may cause compiler extension points to behave unpredictably.
+# Please keep this rule's severity above suggestion to actively encourage properly implementing compiler extensions properly.
+dotnet_diagnostic.RS1038.severity = warning
+# RS1039: This call to 'SemanticModel.GetDeclaredSymbol()' will always return 'null'
+# Calling SemanticModel.GetDeclaredSymbol on certain types inheriting from SyntaxNode will always return null.
+# Please keep this rule's severity above suggestion to actively avoid calls that will always return null.
+dotnet_diagnostic.RS1039.severity = warning
+# RS1040: This call to 'SemanticModel.GetDeclaredSymbol()' will always return 'null'
+# Calling SemanticModel.GetDeclaredSymbol with an argument of type FieldDeclarationSyntax or EventFieldDeclarationSyntax will always return null.
+# Please keep this rule's severity above suggestion to actively avoid calls that will always return null.
+dotnet_diagnostic.RS1040.severity = warning
+# RS1041: Compiler extensions should be implemented in assemblies targeting netstandard2.0
+# More specific target frameworks may cause compiler extensions to behave unpredictably.
+# Please keep this rule's severity above suggestion to actively encourage implementing compiler extensions in assemblies targeting netstandard2.0.
+dotnet_diagnostic.RS1041.severity = warning
+# RS1042: Implementations of this interface are not allowed
+# Implementing interfaces that have been deprecated are not allowed.
+# Please keep this rule's severity above warning to avoid implementing interfaces that have been deprecated.
+dotnet_diagnostic.RS1042.severity = error
+# RS2000: Add analyser diagnostic IDs to analyser release
+# All supported analyser diagnostic IDs should be part of an analyser release.
+# Please keep this rule's severity above suggestion to actively encourage adding all supported analyser diagnostic IDs to an analyser release.
+dotnet_diagnostic.RS2000.severity = warning
+# RS2001: Ensure up-to-date entry for analyser diagnostic IDs are added to analyser release
+# Analyser releases should be provided with up-to-date entries for analyser diagnostic IDs.
+# Please keep this rule's severity above suggestion to actively encourage providing analyser releases with up-to-date data.
+dotnet_diagnostic.RS2001.severity = warning
+# RS2002: Do not add removed analyser diagnostic IDs to unshipped analyser release
+# Entries for analyser diagnostic IDs that are no longer reported and never shipped can be removed from unshipped analyser release.
+# Please keep this rule's severity above suggestion to actively encourage removing analyser diagnostic ID entries that are no longer reported and never shipped from analyser releases.
+dotnet_diagnostic.RS2002.severity = warning
+# RS2003: Shipped diagnostic IDs that are no longer reported should have an entry in the 'Removed Rules' table in unshipped file
+# Shipped diagnostic IDs that are no longer reported should have an entry in the Removed Rules table in unshipped file.
+# Please keep this rule's severity above suggestion to actively encourage adding shipped diagnostic IDs that are no longer supported to the Removed Rules table in unshipped file.
+dotnet_diagnostic.RS2003.severity = warning
+# RS2004: Diagnostic IDs marked as removed in analyser release file should not be reported by analysers
+# Diagnostic IDs marked as removed in analyser release file should not be reported by analysers.
+# Please keep this rule's severity above suggestion to actively avoid diagnostic IDs marked as removed in analyser release file being reported by analysers.
+dotnet_diagnostic.RS2004.severity = warning
+# RS2005: Remove duplicate entries for diagnostic ID in the same analyser release
+# Duplicate entries for diagnostic ID in the same analyser release should be removed.
+# Please keep this rule's severity above suggestion to actively encourage removing duplicate entries for diagnostic ID in the same analyser release.
+dotnet_diagnostic.RS2005.severity = warning
+# RS2006: Remove duplicate entries for diagnostic ID between analyser releases
+# Duplicate entries for diagnostic ID between analyser releases should be removed.
+# Please keep this rule's severity above suggestion to actively encourage removing duplicate entries for diagnostic ID between analyser releases.
+dotnet_diagnostic.RS2006.severity = warning
+# RS2007: Invalid entry in analyser release file
+# The analyser release file should not contain invalid entries.
+# Please keep this rule's severity above suggestion to actively avoid invalid entries in the analyser release file.
+dotnet_diagnostic.RS2007.severity = warning
+# RS2008: Enable analyser release tracking
+# Enabling analyser release tracking for analyer packages helps in tracking and documenting the analyser diagnostics that ship and/or change with each analyser release.
+# Please keep this rule's severity above suggestion to actively encourage enabling analyser release tracking.
+dotnet_diagnostic.RS2008.severity = warning
+
+# C# files
+[*.cs]
 
 # Microsoft.CodeAnalysis.BannedApiAnalyzers
 # https://www.nuget.org/packages/Microsoft.CodeAnalysis.BannedApiAnalyzers
@@ -4812,10 +5022,10 @@ dotnet_diagnostic.S927.severity = none
 
 # Roslynator is made up of 3 NuGet packages:
 # Roslynator.Analyzers, Roslynator.CodeAnalysis.Analyzers & Roslynator.Formatting.Analyzers.
-# Please see the [RoslynAnalysers/**.cs] section for Roslynator.CodeAnalysis.Analyzers configuration.
+# Roslynator.CodeAnalysis.Analyzers should only be used while developing Roslyn Analysers.
 # https://github.com/dotnet/roslynator
 
-# Roslynator.Formatting.Analyzers provides RCS0 rules.
+# Roslynator.Formatting.Analyzers implements RCS0 rules.
 # https://www.nuget.org/packages/Roslynator.Formatting.Analyzers
 # https://josefpihrt.github.io/docs/roslynator/analyzers
 
@@ -6097,6 +6307,61 @@ dotnet_diagnostic.RCS1267.severity = suggestion
 # Numeric comparisons should be simplified for readability.
 # Please keep this rule's severity above silent to actively encourage simplifying numeric comparisons for maintainability.
 dotnet_diagnostic.RCS1268.severity = suggestion
+
+# Roslyn Analyser C# files
+[RoslynAnalysers/**.cs]
+
+# Roslynator.CodeAnalysis.Analyzers implements RCS9 rules, which should only be used while developing Roslyn Analysers.
+# https://www.nuget.org/packages/Roslynator.CodeAnalysis.Analyzers
+# https://josefpihrt.github.io/docs/roslynator/analyzers/
+
+# RCS9001: Use pattern matching
+# Simplifies code for readability.
+# Please keep this rule's severity above silent to actively encourage shorter code.
+dotnet_diagnostic.RCS9001.severity = suggestion
+# RCS9002: Use property SyntaxNode.SpanStart
+# Simplifies code for readability.
+# Please keep this rule's severity above silent to actively encourage shorter code.
+dotnet_diagnostic.RCS9002.severity = suggestion
+# RCS9003: Unnecessary conditional access
+# Simplifies code for readability.
+# Please keep this rule's severity above silent to actively encourage shorter code.
+dotnet_diagnostic.RCS9003.severity = suggestion
+# RCS9004: Call 'Any' instead of accessing 'Count'
+# Any is more performant than Count.
+# Please keep this rule's severity above suggestion to actively encourage more performant code.
+dotnet_diagnostic.RCS9004.severity = warning
+# RCS9005: Unnecessary null check
+# Syntax nodes do not need to be checked for null before being used.
+# Please keep this rule's severity above silent to actively avoid unnecessary null checks on syntax nodes.
+dotnet_diagnostic.RCS9005.severity = suggestion
+# RCS9006: Use element access
+# Simplifies code for readability.
+# Please keep this rule's severity above silent to actively encourage shorter code.
+dotnet_diagnostic.RCS9006.severity = suggestion
+# RCS9007: Use return value
+# Return values should not be left unused.
+# Please keep this rule's severity above suggestion to actively encourage using return values.
+dotnet_diagnostic.RCS9007.severity = warning
+# RCS9008: Call 'Last' instead of using []
+# Last is more performant than [].
+# Please keep this rule's severity above suggestion to actively encourage more performant code.
+dotnet_diagnostic.RCS9008.severity = warning
+# RCS9009: Unknown language name
+# Only known language names should be used.
+# Please keep this rule's severity above suggestion to actively avoid using unknown language names.
+dotnet_diagnostic.RCS9009.severity = warning
+# RCS9010: Specify ExportCodeRefactoringProviderAttribute.Name
+# Names of CodeRefactoringProviders should be specified.
+# Please keep this rule's severity above suggestion to actively encourage specifying names of CodeRefactoringProviders.
+dotnet_diagnostic.RCS9010.severity = warning
+# RCS9011: Specify ExportCodeFixProviderAttribute.Name
+# Names of CodeFixProviders should be specified.
+# Please keep this rule's severity above suggestion to actively encourage specifying names of CodeFixProviders.
+dotnet_diagnostic.RCS9011.severity = warning
+
+# C# files
+[*.cs]
 
 # Roslynator Refactorings
 # https://josefpihrt.github.io/docs/roslynator/refactorings
@@ -8259,269 +8524,10 @@ dotnet_diagnostic.HLQ013.severity = warning
 
 # End of awesome-analyzers
 
-# Roslyn Analyser C# files
-[RoslynAnalysers/**.cs]
-
-# Microsoft.CodeAnalysis.Analyzers, which should only be used with projects that provide Roslyn Analysers.
-# https://www.nuget.org/packages/Microsoft.CodeAnalysis.Analyzers
-# https://github.com/dotnet/roslyn/tree/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers
-
-# RS1001: Missing diagnostic analyser attribute
-# Analyser types without the DiagnosticAnalyserAttribute will be ignored by the analysis engine.
-# Please keep this rule's severity above suggestion to actively avoid missing diagnostic analyser attributes.
-dotnet_diagnostic.RS1001.severity = warning
-# RS1002: Missing kind argument when registering an analyser action
-# Failing to specify at least one syntax will cause the registered action to never be invoked during analysis.
-# Please keep this rule's severity above suggestion to actively avoid missing kind arguments.
-dotnet_diagnostic.RS1002.severity = warning
-# RS1003: Unsupported SymbolKind argument when registering a symbol analyser action
-# Only supported SymbolKinds should be used.
-# Please keep this rule's severity above suggestion to actively avoid unsupported SymbolKinds.
-dotnet_diagnostic.RS1003.severity = warning
-# RS1004: Recommend adding language support to diagnostic analyser
-# Analyser assemblies that don't use language-specific assemblies should be explicitly labelled to support multiple languages.
-# Please keep this rule's severity above suggestion to actively encourage adding multi-language support to diagnostic analysers.
-dotnet_diagnostic.RS1004.severity = warning
-# RS1005: ReportDiagnostic invoked with an unsupported DiagnosticDescriptor
-# Only supportred DiagnosticDescriptors should be used, otherwise the reported diagnostic will be filtered out by the analysis engine.
-dotnet_diagnostic.RS1005.severity = warning
-# RS1006: Invalid type argument for DiagnosticAnalyser's Register method
-# Only valid type arguments should be used, otherwise the registered analyser action can never be invoked during analysis.
-# Please keep this rule's severity above suggestion to actively avoid invalid type arguments.
-dotnet_diagnostic.RS1006.severity = warning
-# RS1007: Provide localisable arguments to diagnostic descriptor constructor
-# Diagnostic analysers and its reported diagnostics are not localisable unless localisable arguments are provided.
-# Please keep this rule's severity above suggestion to actively encourage localisable diagnostic descriptors.
-dotnet_diagnostic.RS1007.severity = warning
-# RS1008: Avoid storing per-compilation data into the fields of a diagnostic analyser
-# Doing so may cause stale compilations to stay alive and cause memory leaks.
-# Please keep this rule's severity above suggestion to actively avoid memory leaks.
-dotnet_diagnostic.RS1008.severity = warning
-# RS1009: Only internal implementations of this interface are allowed
-# Unintended implementations could result in source or binary compatibility issues with a future version of the interface.
-# Please keep this rule's severity above warning to avoid future source or binary compatibility issues.
-dotnet_diagnostic.RS1009.severity = error
-# RS1010: Create code actions should have a unique EquivalenceKey for FixAll occurrences support
-# RS1011: Use code actions that have a unique EquivalenceKey for FixAll occurrences support
-# Doing so enables fixing all diagnostics in the required scope.
-# Please keep these rules' severities above suggestion to actively encourage enabling fixing all diagnostics.
-dotnet_diagnostic.RS1010.severity = warning
-dotnet_diagnostic.RS1011.severity = warning
-# RS1012: Start action has no registered actions
-# Start actions should have at least one action registered.
-# Please keep this rule's severity above suggestion to actively avoid start actions with no registered actions.
-dotnet_diagnostic.RS1012.severity = warning
-# RS1013: Start action has no registered non-end actions
-# Start actions should have at least one non-end action registered.
-# Please keep this rule's severity above suggestion to actively avoid start actions with no non-end registered actions.
-dotnet_diagnostic.RS1013.severity = warning
-# RS1014: Do not ignore values returned by methods on immutable objects
-# Ignoring values returned by methods on immutable objects results in redundant code.
-# Please keep this rule's severity above suggestion to actively avoid redundant code.
-dotnet_diagnostic.RS1014.severity = warning
-# RS1015: Provide non-null 'helpLinkUri' value to diagnostic descriptor constructor
-# Every analyser should have a helpLinkUri specified.
-# Please keep this rule's severity above suggestion to actively avoid non-null helpLinkUris.
-dotnet_diagnostic.RS1015.severity = warning
-# RS1016: Code fix providers should provide FixAll support
-# Supporting FixAll enables users to fix multiple instances of the underlying diagnostic with a single code fix.
-# Please keep this rule's severity above suggestion to actively encourage supporting FixAll.
-dotnet_diagnostic.RS1016.severity = warning
-# RS1017: DiagnosticId for analysers must be a non-null constant
-# Only non-null constants should be used for DiagnosticIds for analysers.
-# Please keep this rule's severity above suggestion to actively encourage non-null constants for DiagnosticIds for analysers.
-dotnet_diagnostic.RS1017.severity = warning
-# RS1018: DiagnosticId for analysers must be in specified format
-# Only allowed formats should be used for DiagnosticIds for analysers.
-# Please keep this rule's severity above suggestion to actively encourage using the specified format for DiagnosticIds for analysers.
-dotnet_diagnostic.RS1018.severity = warning
-# RS1019: DiagnosticId must be unique across analysers
-# Only unique DiagnosticIds should be used, even across analysers.
-# Please keep this rule's severity above suggestion to actively encourage unique DiagnosticIds across analysers.
-dotnet_diagnostic.RS1019.severity = warning
-# RS1020: Category for analysers must be from the specified values
-# Only allowed categories should be used for analysers.
-# Please keep this rule's severity above suggestion to actively encourage using allowed categories for analysers.
-dotnet_diagnostic.RS1020.severity = warning
-# RS1021: Invalid entry in analyser category and diagnostic ID range specification file
-# Only valid entries in analyser category and diagnostic ID range specification file should be used.
-# Please keep this rule's severity above suggestion to actively encourage using valid entries in analyser category and diagnostic ID range specification file.
-dotnet_diagnostic.RS1021.severity = warning
-# RS1022: Do not use types from Workspaces assembly in an analyser
-# Using types from Workspace assemblies in an analyser will lead to runtime exceptions during analyser execution in command line builds.
-# Please keep this rule's severity above suggestion to actively avoid runtime exceptions during analyser execution in command line builds.
-dotnet_diagnostic.RS1022.severity = warning
-# RS1023: Upgrade MSBuildWorkspace
-# The newer Microsoft.CodeAnalysis.Workspaces.MSBuild NuGet package should be used instead.
-# Please keep this rule's severity above suggestion to actively encourage upgrading MSBuildWorkspace.
-dotnet_diagnostic.RS1023.severity = warning
-# RS1024: Symbols should be compared for equality
-# Symbols should be compared for equality, not identity.
-# Please keep this rule's severity above suggestion to actively encourage comparing symbols for equality.
-dotnet_diagnostic.RS1024.severity = warning
-# RS1025: Configure generated code analysis
-# Generated code analysis should be configured.
-# Please keep this rule's severity above suggestion to actively encourage configuring generated code analysis.
-dotnet_diagnostic.RS1025.severity = warning
-# RS1026: Enable concurrent execution
-# Concurrent execution should be enabled.
-# Please keep this rule's severity above suggestion to actively encourage enabling concurrent execution.
-dotnet_diagnostic.RS1026.severity = warning
-# RS1027: Types marked with DiagnosticAnalyserAttribute(s) should inherit from DiagnosticAnalyser
-# All types marked with [DiagnosticAnalyser] should inherit from DiagnosticAnalyser.
-# Please keep this rule's severity above suggestion to actively encourage inheriting from DiagnosticAnalyser when a type is marked with [DiagnosticAnalyser].
-dotnet_diagnostic.RS1027.severity = warning
-# RS1028: Provide non-null 'customTags' value to diagnostic descriptor constructor
-# Every Roslyn Analyser should have at least one tag from the WellKnownDiagnosticTags class.
-# Please keep this rule's severity above suggestion to actively encourage adding custom tags to all Roslyn Analysers.
-dotnet_diagnostic.RS1028.severity = warning
-# RS1029: Do not use reserved diagnostic IDs
-# Reserved diagnostic IDs should not be used.
-# Please keep this rule's severity above suggestion to actively avoid using reserved diagnostic IDs.
-dotnet_diagnostic.RS1029.severity = warning
-# RS1030: Do not invoke Compilation.GetSemanticModel() method within a diagnostic analyser
-# Invoking GetSemanticModel is expensive. Consider registering a different analyser action which allows use of a shared SemanticModel.
-# Please keep this rule's severity above suggestion to actively avoid invoking GetSemanticModel.
-dotnet_diagnostic.RS1030.severity = warning
-# RS1031: Define diagnostic title correctly
-# Avoid periods, line returns, and leading or trailing whitespaces in diagnostic titles.
-# Please keep this rule's severity above suggestion to actively encourage defining diagnostic titles correctly.
-dotnet_diagnostic.RS1031.severity = warning
-# RS1032: Define diagnostic message correctly
-# Avoid line returns, leading or trailing whitespace, single sentence with a trailing period, and multi-sentence without a trailing period in diagnostic messages.
-# Please keep this rule's severity above suggestion to actively encourage defining diagnostic messages correctly.
-dotnet_diagnostic.RS1032.severity = warning
-# RS1033: Define diagnostic description correctly
-# Use an ending punctuation sign and avoid leading or trailing whitespace in diagnostic descriptions.
-# Please keep this rule's severity above suggestion to actively encourage defining diagnostic descriptions correctly.
-dotnet_diagnostic.RS1033.severity = warning
-# RS1034: Prefer 'IsKind' for checking syntax kinds
-# IsKind is slightly more efficient at runtime.
-# Please keep this rule's severity above suggestion to actively encourage more performant code.
-dotnet_diagnostic.RS1034.severity = warning
-# RS1035: Do not use APIs banned for analysers
-# Symbols marked as banned for use in analysers should be avoided.
-# Please keep this rule's severity above warning to actively avoid using APIs banned for analysers.
-dotnet_diagnostic.RS1035.severity = error
-# RS1036: Specify analyser banned API enforcement setting
-# A project containing analysers or source generators should set the EnforceExtendedAnalyserRules MSBuild property to true.
-# Please keep this rule's severity to actively encourage specifying the analyser banned API enforcement setting.
-dotnet_diagnostic.RS1036.severity = warning
-# RS1037: Add "CompilationEnd" custom tag to compilation end diagnostic descriptor
-# DiagnosticDescriptor assigned to field is used to report a compilation end diagnostic,
-# but the DiagnosticDescriptor used to initialise it does not pass in the required custom CompilationEnd tag.
-# Please keep this rule's severity above suggestion to actively encourage properly reporting compilation end diagnostics.
-dotnet_diagnostic.RS1037.severity = warning
-# RS1038: Compiler extensions should be implemented in assemblies with compiler-provided references
-# Failure to do so may cause compiler extension points to behave unpredictably.
-# Please keep this rule's severity above suggestion to actively encourage properly implementing compiler extensions properly.
-dotnet_diagnostic.RS1038.severity = warning
-# RS1039: This call to 'SemanticModel.GetDeclaredSymbol()' will always return 'null'
-# Calling SemanticModel.GetDeclaredSymbol on certain types inheriting from SyntaxNode will always return null.
-# Please keep this rule's severity above suggestion to actively avoid calls that will always return null.
-dotnet_diagnostic.RS1039.severity = warning
-# RS1040: This call to 'SemanticModel.GetDeclaredSymbol()' will always return 'null'
-# Calling SemanticModel.GetDeclaredSymbol with an argument of type FieldDeclarationSyntax or EventFieldDeclarationSyntax will always return null.
-# Please keep this rule's severity above suggestion to actively avoid calls that will always return null.
-dotnet_diagnostic.RS1040.severity = warning
-# RS1041: Compiler extensions should be implemented in assemblies targeting netstandard2.0
-# More specific target frameworks may cause compiler extensions to behave unpredictably.
-# Please keep this rule's severity above suggestion to actively encourage implementing compiler extensions in assemblies targeting netstandard2.0.
-dotnet_diagnostic.RS1041.severity = warning
-# RS1042: Implementations of this interface are not allowed
-# Implementing interfaces that have been deprecated are not allowed.
-# Please keep this rule's severity above warning to avoid implementing interfaces that have been deprecated.
-dotnet_diagnostic.RS1042.severity = error
-# RS2000: Add analyser diagnostic IDs to analyser release
-# All supported analyser diagnostic IDs should be part of an analyser release.
-# Please keep this rule's severity above suggestion to actively encourage adding all supported analyser diagnostic IDs to an analyser release.
-dotnet_diagnostic.RS2000.severity = warning
-# RS2001: Ensure up-to-date entry for analyser diagnostic IDs are added to analyser release
-# Analyser releases should be provided with up-to-date entries for analyser diagnostic IDs.
-# Please keep this rule's severity above suggestion to actively encourage providing analyser releases with up-to-date data.
-dotnet_diagnostic.RS2001.severity = warning
-# RS2002: Do not add removed analyser diagnostic IDs to unshipped analyser release
-# Entries for analyser diagnostic IDs that are no longer reported and never shipped can be removed from unshipped analyser release.
-# Please keep this rule's severity above suggestion to actively encourage removing analyser diagnostic ID entries that are no longer reported and never shipped from analyser releases.
-dotnet_diagnostic.RS2002.severity = warning
-# RS2003: Shipped diagnostic IDs that are no longer reported should have an entry in the 'Removed Rules' table in unshipped file
-# Shipped diagnostic IDs that are no longer reported should have an entry in the Removed Rules table in unshipped file.
-# Please keep this rule's severity above suggestion to actively encourage adding shipped diagnostic IDs that are no longer supported to the Removed Rules table in unshipped file.
-dotnet_diagnostic.RS2003.severity = warning
-# RS2004: Diagnostic IDs marked as removed in analyser release file should not be reported by analysers
-# Diagnostic IDs marked as removed in analyser release file should not be reported by analysers.
-# Please keep this rule's severity above suggestion to actively avoid diagnostic IDs marked as removed in analyser release file being reported by analysers.
-dotnet_diagnostic.RS2004.severity = warning
-# RS2005: Remove duplicate entries for diagnostic ID in the same analyser release
-# Duplicate entries for diagnostic ID in the same analyser release should be removed.
-# Please keep this rule's severity above suggestion to actively encourage removing duplicate entries for diagnostic ID in the same analyser release.
-dotnet_diagnostic.RS2005.severity = warning
-# RS2006: Remove duplicate entries for diagnostic ID between analyser releases
-# Duplicate entries for diagnostic ID between analyser releases should be removed.
-# Please keep this rule's severity above suggestion to actively encourage removing duplicate entries for diagnostic ID between analyser releases.
-dotnet_diagnostic.RS2006.severity = warning
-# RS2007: Invalid entry in analyser release file
-# The analyser release file should not contain invalid entries.
-# Please keep this rule's severity above suggestion to actively avoid invalid entries in the analyser release file.
-dotnet_diagnostic.RS2007.severity = warning
-# RS2008: Enable analyser release tracking
-# Enabling analyser release tracking for analyer packages helps in tracking and documenting the analyser diagnostics that ship and/or change with each analyser release.
-# Please keep this rule's severity above suggestion to actively encourage enabling analyser release tracking.
-dotnet_diagnostic.RS2008.severity = warning
-
-# Roslynator.CodeAnalysis.Analyzers, which should only be used with projects that provide Roslyn Analysers.
-# https://www.nuget.org/packages/Roslynator.CodeAnalysis.Analyzers
-# https://josefpihrt.github.io/docs/roslynator/analyzers/
-
-# RCS9001: Use pattern matching
-# Simplifies code for readability.
-# Please keep this rule's severity above silent to actively encourage shorter code.
-dotnet_diagnostic.RCS9001.severity = suggestion
-# RCS9002: Use property SyntaxNode.SpanStart
-# Simplifies code for readability.
-# Please keep this rule's severity above silent to actively encourage shorter code.
-dotnet_diagnostic.RCS9002.severity = suggestion
-# RCS9003: Unnecessary conditional access
-# Simplifies code for readability.
-# Please keep this rule's severity above silent to actively encourage shorter code.
-dotnet_diagnostic.RCS9003.severity = suggestion
-# RCS9004: Call 'Any' instead of accessing 'Count'
-# Any is more performant than Count.
-# Please keep this rule's severity above suggestion to actively encourage more performant code.
-dotnet_diagnostic.RCS9004.severity = warning
-# RCS9005: Unnecessary null check
-# Syntax nodes do not need to be checked for null before being used.
-# Please keep this rule's severity above silent to actively avoid unnecessary null checks on syntax nodes.
-dotnet_diagnostic.RCS9005.severity = suggestion
-# RCS9006: Use element access
-# Simplifies code for readability.
-# Please keep this rule's severity above silent to actively encourage shorter code.
-dotnet_diagnostic.RCS9006.severity = suggestion
-# RCS9007: Use return value
-# Return values should not be left unused.
-# Please keep this rule's severity above suggestion to actively encourage using return values.
-dotnet_diagnostic.RCS9007.severity = warning
-# RCS9008: Call 'Last' instead of using []
-# Last is more performant than [].
-# Please keep this rule's severity above suggestion to actively encourage more performant code.
-dotnet_diagnostic.RCS9008.severity = warning
-# RCS9009: Unknown language name
-# Only known language names should be used.
-# Please keep this rule's severity above suggestion to actively avoid using unknown language names.
-dotnet_diagnostic.RCS9009.severity = warning
-# RCS9010: Specify ExportCodeRefactoringProviderAttribute.Name
-# Names of CodeRefactoringProviders should be specified.
-# Please keep this rule's severity above suggestion to actively encourage specifying names of CodeRefactoringProviders.
-dotnet_diagnostic.RCS9010.severity = warning
-# RCS9011: Specify ExportCodeFixProviderAttribute.Name
-# Names of CodeFixProviders should be specified.
-# Please keep this rule's severity above suggestion to actively encourage specifying names of CodeFixProviders.
-dotnet_diagnostic.RCS9011.severity = warning
-
 # Unit Testing C# files
 [Tests/**.cs]
 
-# NUnit.Analyzers, which should only be used with projects that provide unit tests via NUnit.
+# NUnit.Analyzers, which should only be used while developing unit tests via NUnit.
 # https://www.nuget.org/packages/NUnit.Analyzers
 # https://github.com/nunit/nunit.analyzers/tree/master/documentation
 
