@@ -7176,8 +7176,8 @@ dotnet_diagnostic.ROS0002.severity = warning
 # Required options for enabled analysers should always be set.
 # Please keep this rule's severity above suggestion to actively avoid improperly configured analysers.
 dotnet_diagnostic.ROS0003.severity = warning
-# Enable code analysis to detect Unity-specific code
-roslynator_unity_code_analysis.enabled = true
+# Disable code analysis to detect Unity-specific code
+roslynator_unity_code_analysis.enabled = false
 
 # ! ErrorProne.NET does not yet have a v1.0+ release & unfinished documentation, making this analyser difficult to understand.
 # This analyser will not be used.
