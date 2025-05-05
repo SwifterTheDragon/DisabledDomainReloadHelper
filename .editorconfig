@@ -314,6 +314,10 @@ dotnet_naming_style.ends_with_async_pascalcase.capitalization = pascal_case
 
 # Built-in analysers
 
+# Compiler Messages, included with the C# compiler.
+# https://www.nuget.org/packages/Microsoft.CodeAnalysis.CSharp
+# https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/
+
 # IDE-only code style rules
 
 # JSON001: Invalid JSON pattern
