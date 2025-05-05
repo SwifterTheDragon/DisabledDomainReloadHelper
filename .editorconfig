@@ -2441,7 +2441,7 @@ dotnet_diagnostic.CA2265.severity = warning
 # https://github.com/dotnet/roslyn
 
 # ! Microsoft.CodeAnalysis.AnalyzerUtilities is currently an internal-only package reserved for private consumption, and has been described as being not yet ready for release.
-# This package is irrelevant.
+# This analyser will not be used.
 # https://github.com/dotnet/roslyn/tree/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.AnalyzerUtilities
 
 # Roslyn Analyser C# files
