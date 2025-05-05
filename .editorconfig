@@ -2447,7 +2447,7 @@ dotnet_diagnostic.CA2265.severity = warning
 # Roslyn Analyser C# files
 [RoslynAnalysers/**.cs]
 
-# Microsoft.CodeAnalysis.Analyzers, which should only be used with projects that provide Roslyn Analysers.
+# Microsoft.CodeAnalysis.Analyzers, which should only be used while developing Roslyn Analysers.
 # https://www.nuget.org/packages/Microsoft.CodeAnalysis.Analyzers
 # https://github.com/dotnet/roslyn/tree/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers
 
