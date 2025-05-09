@@ -5604,6 +5604,8 @@ dotnet_diagnostic.RCS1077.severity = warning
 # string.Empty explicitly states intent better than "".
 # Please keep this rule's severity above silent to actively encourage more readable code.
 dotnet_diagnostic.RCS1078.severity = suggestion
+# Prefer 'string.Empty'
+roslynator_empty_string_style = field
 # RCS1079: Throwing of new NotImplementedException
 # MA0025 should control NotImplementedException preferences.
 # Please keep this rule's severity disabled to avoid using multiple analysers to control the same preferences.
@@ -5658,6 +5660,8 @@ dotnet_diagnostic.RCS1094.severity = none
 # HasFlag can be used instead of bitwise operators to simplify code for readability.
 # Please keep this rule's severity above silent to actively encourage more readable code.
 dotnet_diagnostic.RCS1096.severity = suggestion
+# Use 'HasFlag' method
+roslynator_enum_has_flag_style = method
 # RCS1097: Remove redundant 'ToString' call
 # Redundant ToString calls can be removed to simplify code for readability.
 # Please keep this rule's severity above silent to actively encourage more readable code.
@@ -6046,6 +6050,8 @@ dotnet_diagnostic.RCS1206.severity = none
 # Method groups are more performant than anonymous functions.
 # Please keep this rule's severity above suggestion to actively encourage more performant code.
 dotnet_diagnostic.RCS1207.severity = warning
+# Use method group
+roslynator_use_anonymous_function_or_method_group = method_group
 # RCS1208: Reduce 'if' nesting
 # Code should be flattened for readability.
 # Please keep this rule's severity above silent to actively encourage more performant code.
