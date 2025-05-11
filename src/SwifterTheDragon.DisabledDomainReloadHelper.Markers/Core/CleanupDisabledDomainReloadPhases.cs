@@ -3,22 +3,22 @@
 
 namespace SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core
 {
-    /// <summary>
-    /// Specifies which phase disabled domain reload cleanup should occur.
-    /// </summary>
+    /// <include
+    /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.Markers.xml'
+    /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.Markers"]/Namespace[@name="Core"]/Type[@name="CleanupDisabledDomainReloadPhases"]/Description/*'/>
     public enum CleanupDisabledDomainReloadPhases
     {
-        /// <summary>
-        /// The default value. This should never be used intentionally.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.Markers.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.Markers"]/Namespace[@name="Core"]/Type[@name="CleanupDisabledDomainReloadPhases"]/Field[@name="None"]/*'/>
         None = 0,
-        /// <summary>
-        /// Specifies that cleanup should be performed upon exiting play mode.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.Markers.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.Markers"]/Namespace[@name="Core"]/Type[@name="CleanupDisabledDomainReloadPhases"]/Field[@name="OnExitPlayMode"]/*'/>
         OnExitPlayMode = 1,
-        /// <summary>
-        /// Specifies that cleanup should be performed upon entering play mode.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.Markers.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.Markers"]/Namespace[@name="Core"]/Type[@name="CleanupDisabledDomainReloadPhases"]/Field[@name="OnEnterPlayMode"]/*'/>
         OnEnterPlayMode = 2
     }
 }

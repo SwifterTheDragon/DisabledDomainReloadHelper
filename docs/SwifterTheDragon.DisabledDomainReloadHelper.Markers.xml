@@ -1,3 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Assembly name="SwifterTheDragon.DisabledDomainReloadHelper.Markers">
+    <Description>
+        <summary>
+            Provides marker attributes to opt into source generation.
+        </summary>
+    </Description>
+    <Namespace name="Core">
+        <Description>
+            <summary>
+                Provides miscellaneous functionality.
+            </summary>
+        </Description>
+    <Type name="CleanupDisabledDomainReloadPhases">
+        <Description>
+            <summary>
+                Specifies which phase disabled domain reloads cleanup should occur.
+            </summary>
+        </Description>
+        <Field name="None">
+            <summary>
+                The default value. This should never be used intentionally.
+            </summary>
+        </Field>
+        <Field name="OnExitPlayMode">
+            <summary>
+                Specifies that cleanup should be performed upon exiting play mode.
+            </summary>
+        </Field>
+        <Field name="OnEnterPlayMode">
+            <summary>
+                Specifies that cleanup should be performed upon entering play mode.
+            </summary>
+        </Field>
+    </Type>
+    </Namespace>
 </Assembly>
