@@ -11,6 +11,7 @@
         <InformationalVersion>1.0.0</InformationalVersion>
         <Product>SwifterTheDragon.DisabledDomainReloadHelper</Product>
         <Title>$(AssemblyName)</Title>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <Authors>SwifterTheDragon</Authors>
         <PackageProjectUrl>https://github.com/SwifterTheDragon/DisabledDomainReloadHelper</PackageProjectUrl>
         <RepositoryUrl>https://github.com/SwifterTheDragon/DisabledDomainReloadHelper</RepositoryUrl>
