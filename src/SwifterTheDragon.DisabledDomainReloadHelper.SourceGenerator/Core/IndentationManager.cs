@@ -5,32 +5,35 @@ using System.Text;
 
 namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
 {
-    /// <summary>
-    /// Manages indentation for source generated output.
-    /// </summary>
+    /// <include
+    /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+    /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Description/*'/>
     internal class IndentationManager
     {
         #region Fields & Properties
-        /// <summary>
-        /// The default white space character.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Field[@name="k_DefaultWhiteSpaceCharacter"]/*'/>
         private const char k_DefaultWhiteSpaceCharacter = ' ';
-        /// <summary>
-        /// The default indentation size.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Field[@name="k_DefaultIndentationSize"]/*'/>
         private const int k_DefaultIndentationSize = 4;
-        /// <summary>
-        /// The current white space character.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Field[@name="i_currentWhiteSpaceCharacter"]/*'/>
         private readonly char i_currentWhiteSpaceCharacter;
-        /// <summary>
-        /// The current size of an indentation.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Field[@name="i_currentIndentationSize"]/*'/>
         private readonly int i_currentIndentationSize;
-        /// <summary>
-        /// The current indentation amount.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Field[@name="i_currentIndentationAmount"]/*'/>
         private int i_currentIndentationAmount;
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Property[@name="CurrentIndentationCharacterRepeatCount"]/*'/>
         private int CurrentIndentationCharacterRepeatCount
         {
             get
@@ -38,20 +41,15 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
                 return i_currentIndentationSize * i_currentIndentationAmount;
             }
         }
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Field[@name="i_builder"]/*'/>
         private readonly StringBuilder i_builder = new StringBuilder();
         #endregion Fields & Properties
         #region Methods
-        /// <summary>
-        /// Creates a new instance of <c><see cref="IndentationManager"/></c>,
-        /// optionally with a non-default white space character, or indentation
-        /// size.
-        /// </summary>
-        /// <param name="whiteSpaceCharacter">
-        /// The character to use as white space.
-        /// </param>
-        /// <param name="indentationSize">
-        /// The size of an indentation.
-        /// </param>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="#ctor(System.Char,System.Int32)"]/*'/>
         internal IndentationManager(
             char whiteSpaceCharacter = k_DefaultWhiteSpaceCharacter,
             int indentationSize = k_DefaultIndentationSize)
@@ -59,39 +57,32 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
             i_currentWhiteSpaceCharacter = whiteSpaceCharacter;
             i_currentIndentationSize = indentationSize;
         }
-        /// <summary>
-        /// Increments the current indentation amount.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="IncrementIndentation"]/*'/>
         internal void IncrementIndentation()
         {
             ++i_currentIndentationAmount;
         }
-        /// <summary>
-        /// Decrements the current indentation amount.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="DecrementIndentation"]/*'/>
         internal void DecrementIndentation()
         {
             --i_currentIndentationAmount;
         }
-        /// <summary>
-        /// Appends <c><paramref name="input"/></c> without prepending white
-        /// space.
-        /// </summary>
-        /// <param name="input">
-        /// The text to append.
-        /// </param>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="AppendWithoutWhiteSpace(System.String)"]/*'/>
         internal void AppendWithoutWhiteSpace(
             string input)
         {
             i_builder.Append(
                 value: input);
         }
-        /// <summary>
-        /// Appends <c><paramref name="input"/></c> with prepending white space.
-        /// </summary>
-        /// <param name="input">
-        /// The text to append.
-        /// </param>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="AppendWithWhiteSpace(System.String)"]/*'/>
         internal void AppendWithWhiteSpace(
             string input)
         {
@@ -99,20 +90,16 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
             i_builder.Append(
                 value: input);
         }
-        /// <summary>
-        /// Appends a line terminator.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="AppendLine"]/*'/>
         internal void AppendLine()
         {
             i_builder.AppendLine();
         }
-        /// <summary>
-        /// Appends white space, followed by <c><paramref name="input"/></c>,
-        /// followed by a line terminator.
-        /// </summary>
-        /// <param name="input">
-        /// The text to append.
-        /// </param>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="AppendLineWithWhiteSpace(System.String)"]/*'/>
         internal void AppendLineWithWhiteSpace(
             string input)
         {
@@ -120,56 +107,43 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
             i_builder.AppendLine(
                 value: input);
         }
-        /// <summary>
-        /// Appends <c><paramref name="input"/></c>, followed by a line
-        /// terminator.
-        /// </summary>
-        /// <param name="input">
-        /// The text to append.
-        /// </param>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="AppendLineWithoutWhiteSpace(System.String)"]/*'/>
         internal void AppendLineWithoutWhiteSpace(
             string input)
         {
             i_builder.AppendLine(
                 value: input);
         }
-        /// <summary>
-        /// Invokes <c><see cref="AppendLineWithWhiteSpace(string)"/></c> with "<c>{</c>",
-        /// then invokes <c><see cref="IncrementIndentation"/></c>.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="OpenBlock"]/*'/>
         internal void OpenBlock()
         {
             AppendLineWithWhiteSpace(
                 input: "{");
             IncrementIndentation();
         }
-        /// <summary>
-        /// Invokes <c><see cref="DecrementIndentation"/></c>,
-        /// then invokes <c><see cref="AppendLineWithWhiteSpace(string)"/></c> with
-        /// "<c>}</c>".
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="CloseBlock"]/*'/>
         internal void CloseBlock()
         {
             DecrementIndentation();
             AppendLineWithWhiteSpace(
                 input: "}");
         }
-        /// <summary>
-        /// Retrieves the <c><see langword="string"/></c> representation of the
-        /// current output.
-        /// </summary>
-        /// <returns>
-        /// The <c><see langword="string"/></c> representation of the current
-        /// output.
-        /// </returns>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="Output"]/*'/>
         internal string Output()
         {
             return i_builder.ToString();
         }
-        /// <summary>
-        /// Appends <c><see cref="i_currentWhiteSpaceCharacter"/></c>,
-        /// <c><see cref="CurrentIndentationCharacterRepeatCount"/></c> times.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Method[@name="AppendWhiteSpace"]/*'/>
         private void AppendWhiteSpace()
         {
             i_builder.Append(

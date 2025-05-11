@@ -1,3 +1,141 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Assembly name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator">
+    <Description>
+        <summary>
+            Source generates boilerplate required to cleanup after disabled domain reloads in Unity projects.
+        </summary>
+    </Description>
+    <Namespace name="Core">
+        <Description>
+            <summary>
+                Provides miscellaneous functionality.
+            </summary>
+        </Description>
+        <Type name="IndentationManager">
+            <Description>
+                <summary>
+                    Manages indentation for source generated output.
+                </summary>
+            </Description>
+            <Field name="k_DefaultWhiteSpaceCharacter">
+                <summary>
+                    The default white space character.
+                </summary>
+            </Field>
+            <Field name="k_DefaultIndentationSize">
+                <summary>
+                    The default white space size.
+                </summary>
+            </Field>
+            <Field name="i_currentWhiteSpaceCharacter">
+                <summary>
+                    The current white space character.
+                </summary>
+            </Field>
+            <Field name="i_currentIndentationSize">
+                <summary>
+                    The current white space size.
+                </summary>
+            </Field>
+            <Field name="i_currentIndentationAmount">
+                <summary>
+                    The current indentation amount.
+                </summary>
+            </Field>
+            <Property name="CurrentIndentationCharacterRepeatCount">
+                <summary>
+                    Gets the current amount of white space characters to repeat.
+                </summary>
+                <value>
+                    <c><see cref="i_currentIndentationSize" /> * <see cref="i_currentIndentationAmount" /></c>.
+                </value>
+            </Property>
+            <Field name="i_builder">
+                <summary>
+                    The object building the resulting text.
+                </summary>
+            </Field>
+            <Method name="#ctor(System.Char,System.Int32)">
+                <summary>
+                    The default constructor, optionally with a non-default white space character, or indentation size.
+                </summary>
+                <param name="whiteSpaceCharacter">
+                    The character to use as white space.
+                </param>
+                <param name="indentationSize">
+                    The size of an indentation.
+                </param>
+            </Method>
+            <Method name="IncrementIndentation">
+                <summary>
+                    Increments the current indentation amount.
+                </summary>
+            </Method>
+            <Method name="DecrementIndentation">
+                <summary>
+                    Decrements the current indentation amount.
+                </summary>
+            </Method>
+            <Method name="AppendWithoutWhiteSpace(System.String)">
+                <summary>
+                    Appends <c><paramref name="input" /></c> without prepending white space.
+                </summary>
+                <param name="input">
+                    The text to append.
+                </param>
+            </Method>
+            <Method name="AppendWithWhiteSpace(System.String)">
+                <summary>
+                    Appends <c><paramref name="input" /></c> with prepending white space.
+                </summary>
+                <param name="input">
+                    The text to append.
+                </param>
+            </Method>
+            <Method name="AppendLine">
+                <summary>
+                    Appends a line terminator.
+                </summary>
+            </Method>
+            <Method name="AppendLineWithWhiteSpace(System.String)">
+                <summary>
+                    Appends white space, followed by <c><paramref name="input" /></c>, followed by a line terminator.
+                </summary>
+                <param name="input">
+                    The text to append.
+                </param>
+            </Method>
+            <Method name="AppendLineWithoutWhiteSpace(System.String)">
+                <summary>
+                    Appends <c><paramref name="input" /></c>, followed by a line terminator.
+                </summary>
+                <param name="input">
+                    The text to append.
+                </param>
+            </Method>
+            <Method name="OpenBlock">
+                <summary>
+                    Invokes <c><see cref="AppendLineWithWhiteSpace(string)" /></c> with &quot;<c>{</c>&quot;, followed by <c><see cref="IncrementIndentation" /></c>.
+                </summary>
+            </Method>
+            <Method name="CloseBlock">
+                <summary>
+                    Invokes <c><see cref="DecrementIndentation" /></c>, followed by <c><see cref="AppendLineWithWhiteSpace(string)" /></c> with &quot;<c>}</c>&quot;.
+                </summary>
+            </Method>
+            <Method name="Output">
+                <summary>
+                    Retrieves the <c><see langword="string" /></c> representation of the current text.
+                </summary>
+                <returns>
+                    The <c><see langword="string" /></c> representation of the current text.
+                </returns>
+            </Method>
+            <Method name="AppendWhiteSpace">
+                <summary>
+                    Appends <c><see cref="i_currentWhiteSpaceCharacter" /></c>, <c><see cref="CurrentIndentationCharacterRepeatCount" /></c> times.
+                </summary>
+            </Method>
+        </Type>
+    </Namespace>
 </Assembly>
