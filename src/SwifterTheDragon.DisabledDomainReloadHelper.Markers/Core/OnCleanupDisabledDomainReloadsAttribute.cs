@@ -6,10 +6,9 @@ using System.Diagnostics;
 
 namespace SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core
 {
-    /// <summary>
-    /// Methods decorated with this attribute will be invoked when disabled
-    /// domain reload cleanup is needed.
-    /// </summary>
+    /// <include
+    /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.Markers.xml'
+    /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.Markers"]/Namespace[@name="Core"]/Type[@name="OnCleanupDisabledDomainReloadsAttribute"]/Description/*'/>
     [AttributeUsage(
         validOn: AttributeTargets.Method,
         AllowMultiple = false,
@@ -19,13 +18,13 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core
     public sealed class OnCleanupDisabledDomainReloadsAttribute : Attribute
     {
         #region Fields & Properties
-        /// <summary>
-        /// The backing store for <c><see cref="Phase"/></c>.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.Markers.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.Markers"]/Namespace[@name="Core"]/Type[@name="OnCleanupDisabledDomainReloadsAttribute"]/Field[@name="i_phase"]/*'/>
         private readonly CleanupDisabledDomainReloadPhases i_phase;
-        /// <summary>
-        /// The phase the decorated method will be invoked for.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.Markers.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.Markers"]/Namespace[@name="Core"]/Type[@name="OnCleanupDisabledDomainReloadsAttribute"]/Property[@name="Phase"]/*'/>
         public CleanupDisabledDomainReloadPhases Phase
         {
             get
@@ -33,10 +32,9 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core
                 return i_phase;
             }
         }
-        /// <summary>
-        /// Specifies how <c><see langword="this"/></c> is displayed in
-        /// debugger windows.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.Markers.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.Markers"]/Namespace[@name="Core"]/Type[@name="OnCleanupDisabledDomainReloadsAttribute"]/Property[@name="DebuggerDisplay"]/*'/>
         [DebuggerBrowsable(
             state: DebuggerBrowsableState.Never)]
         private string DebuggerDisplay
@@ -48,17 +46,17 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core
         }
         #endregion Fields & Properties
         #region Methods
-        /// <summary>
-        /// The default constructor.
-        /// </summary>
-        /// <param name="phase">
-        /// Specifies which phase the decorated method will be invoked for.
-        /// </param>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.Markers.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.Markers"]/Namespace[@name="Core"]/Type[@name="OnCleanupDisabledDomainReloadsAttribute"]/Method[@name="#ctor(SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases)"]/*'/>
         public OnCleanupDisabledDomainReloadsAttribute(
             CleanupDisabledDomainReloadPhases phase)
         {
             i_phase = phase;
         }
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.Markers.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.Markers"]/Namespace[@name="Core"]/Type[@name="OnCleanupDisabledDomainReloadsAttribute"]/Method[@name="ToString"]/*'/>
         public override string ToString()
         {
             return base.ToString()

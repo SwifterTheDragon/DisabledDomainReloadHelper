@@ -11,27 +11,66 @@
                 Provides miscellaneous functionality.
             </summary>
         </Description>
-    <Type name="CleanupDisabledDomainReloadPhases">
-        <Description>
-            <summary>
-                Specifies which phase disabled domain reloads cleanup should occur.
-            </summary>
-        </Description>
-        <Field name="None">
-            <summary>
-                The default value. This should never be used intentionally.
-            </summary>
-        </Field>
-        <Field name="OnExitPlayMode">
-            <summary>
-                Specifies that cleanup should be performed upon exiting play mode.
-            </summary>
-        </Field>
-        <Field name="OnEnterPlayMode">
-            <summary>
-                Specifies that cleanup should be performed upon entering play mode.
-            </summary>
-        </Field>
-    </Type>
+        <Type name="CleanupDisabledDomainReloadPhases">
+            <Description>
+                <summary>
+                    Specifies which phase disabled domain reloads cleanup should occur.
+                </summary>
+            </Description>
+            <Field name="None">
+                <summary>
+                    The default value. This should never be used intentionally.
+                </summary>
+            </Field>
+            <Field name="OnExitPlayMode">
+                <summary>
+                    Specifies that cleanup should be performed upon exiting play mode.
+                </summary>
+            </Field>
+            <Field name="OnEnterPlayMode">
+                <summary>
+                    Specifies that cleanup should be performed upon entering play mode.
+                </summary>
+            </Field>
+        </Type>
+        <Type name="OnCleanupDisabledDomainReloadsAttribute">
+            <Description>
+                <summary>
+                    Methods decorated with this attribute will be invoked when disabled domain reload cleanup is needed.
+                </summary>
+            </Description>
+            <Field name="i_phase">
+                <summary>
+                    The backing store for <c><see cref="Phase" /></c>.
+                </summary>
+            </Field>
+            <Property name="Phase">
+                <summary>
+                    Gets the phase the decorated method will be invoked for.
+                </summary>
+                <value>
+                    The phase the decorated method will be invoked for.
+                </value>
+            </Property>
+            <Property name="DebuggerDisplay">
+                <summary>
+                    Gets text representing how <c><see langword="this" /></c> should be displayed in debugger windows.
+                </summary>
+                <value>
+                    Text representing how <c><see langword="this" /></c> should be displayed in debugger windows.
+                </value>
+            </Property>
+            <Method name="#ctor(SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases)">
+                <summary>
+                    The default constructor.
+                </summary>
+                <param name="phase">
+                    Specifies which phase the decorated method will be invoked for.
+                </param>
+            </Method>
+            <Method name="ToString">
+                <inheritdoc />
+            </Method>
+        </Type>
     </Namespace>
 </Assembly>
