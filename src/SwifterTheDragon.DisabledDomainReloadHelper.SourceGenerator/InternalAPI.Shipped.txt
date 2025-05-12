@@ -1,1 +1,15 @@
-
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.AppendLine() -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.AppendLineWithoutWhiteSpace(string input) -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.AppendLineWithWhiteSpace(string input) -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.AppendWithoutWhiteSpace(string input) -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.AppendWithWhiteSpace(string input) -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.CloseBlock() -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.DecrementIndentation() -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.IncrementIndentation() -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.IndentationManager(char whiteSpaceCharacter = ' ', int indentationSize = 4) -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.OpenBlock() -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.IndentationManager.Output() -> string
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context) -> void
+SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.OnDisabledDomainReloadCleanupGenerator() -> void
