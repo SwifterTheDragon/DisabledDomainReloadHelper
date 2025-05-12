@@ -1,0 +1,4 @@
+SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases
+SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases.None = 0 -> SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases
+SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases.OnEnterPlayMode = 2 -> SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases
+SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases.OnExitPlayMode = 1 -> SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases
