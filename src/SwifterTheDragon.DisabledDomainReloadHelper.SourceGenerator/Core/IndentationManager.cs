@@ -8,7 +8,7 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
     /// <include
     /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
     /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="IndentationManager"]/Description/*'/>
-    internal class IndentationManager
+    internal sealed class IndentationManager
     {
         #region Fields & Properties
         /// <include
