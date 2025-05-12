@@ -18,7 +18,9 @@ namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
     /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
     /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Description/*'/>
     [Generator]
+#pragma warning disable CA1812 // Avoid uninstantiated internal classes
     internal sealed class OnDisabledDomainReloadCleanupGenerator : IIncrementalGenerator
+#pragma warning restore CA1812 // Avoid uninstantiated internal classes
     {
         #region Nested Types
         #region EquatableList<T> Legal Attribution
