@@ -2686,9 +2686,102 @@ dotnet_diagnostic.RS0035.severity = warning
 # This analyser will not be used.
 # https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/PerformanceSensitiveAnalyzers/Microsoft.CodeAnalysis.PerformanceSensitiveAnalyzers.md
 
-# ! Microsoft.CodeAnalysis.PublicApiAnalyzers is for public APIs only.
-# This analyser will not be used.
+# Microsoft.CodeAnalysis.PublicApiAnalyzers
+# https://www.nuget.org/packages/Microsoft.CodeAnalysis.PublicApiAnalyzers
 # https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/PublicApiAnalyzers/PublicApiAnalyzers.Help.md
+
+# RS0016: Add public types and members to the declared API
+# All public types, and members, should be added to the declared API.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0016.severity = warning
+# RS0017: Remove deleted types and members from the declared API
+# Removed public types, and members, should be removed from the declared API.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0017.severity = warning
+# RS0022: Constructor make noninheritable base class inheritable
+# Noninheritable base classes with protected members exposed via derived class constructors should be made inheritable.
+# Please keep this rule's severity above suggestion to encourage consistently exposing public API.
+dotnet_diagnostic.RS0022.severity = warning
+# RS0024: The contents of the public API files are invalid
+# The contents of the public API files should be valid.
+# Please keep this rule's severity above suggestion to actively avoid invalid contents of public API files.
+dotnet_diagnostic.RS0024.severity = warning
+# RS0025: Do not duplicate symbols in public API files
+# Duplicate symbols in public API files are redundant, and harm readability.
+# Please keep this rule's severity above suggestion to actively avoid duplicate symbols in public API files.
+dotnet_diagnostic.RS0025.severity = warning
+# RS0026: Do not add multiple public overloads with optional parameters
+# Multiple public overloads with optional parameters can lead to breaking changes.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0026.severity = warning
+# RS0027: API with optional parameter(s) should have the most parameters amongst its public overloads
+# API with optional parameter(s) that do not have the most parameters amongst its public overloads can lead to breaking changes.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0027.severity = warning
+# RS0036: Annotate nullability of public types and members in the declared API
+# Nullability annotations should be in the declared public API to avoid breaking changes.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0036.severity = warning
+# RS0037: Enable tracking of nullability of reference types in the declared API
+# Tracking nullability of public reference types helps avoid breaking changes.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0037.severity = warning
+# RS0041: Public members should not use oblivious types
+# Using oblivious reference types can lead to breaking changes.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0041.severity = warning
+# RS0048: Missing shipped or unshipped public API file
+# All public API files should be present.
+# Please keep this rule's severity above suggestion to help avoid missing public API files.
+dotnet_diagnostic.RS0048.severity = warning
+# RS0050: API is marked as removed but it exists in source code
+# API marked as removed that still exists in source code is contradictory.
+# Please keep this rule's severity above suggestion to actively avoid marking non-removed API as removed.
+dotnet_diagnostic.RS0050.severity = warning
+# RS0051: Add internal types and members to the declared API
+# All internal types, and members, should be added to the declared API.
+# Please keep this rule's severity above suggestion to actively avoid breaking changes.
+dotnet_diagnostic.RS0051.severity = warning
+# RS0052: Remove deleted types and members from the declared internal API
+# Removed internal types, and members, should be removed from the declared API.
+# Please keep this rule's severity above suggestion to actively avoid breaking changes.
+dotnet_diagnostic.RS0052.severity = warning
+# RS0053: The contents of the internal API files are invalid
+# The contents of internal API files should be valid.
+# Please keep this rule's severity above suggestion to actively avoid invalid contents of internal API files.
+dotnet_diagnostic.RS0053.severity = warning
+# RS0054: Do not duplicate symbols in internal API files
+# Duplicate symbols in internal API files are redundant, and harm readability.
+# Please keep this rule's severity above suggestion to actively avoid duplicate symbols in internal API files.
+dotnet_diagnostic.RS0054.severity = warning
+# RS0055: Annotate nullability of internal types and members in the declared API
+# Nullability annotations should be in declared internal API to avoid breaking changes.
+# Please keep this rule's severity above suggestion to actively avoid breaking changes.
+dotnet_diagnostic.RS0055.severity = warning
+# RS0056: Enable tracking of nullability of reference types in the declared API
+# Tracking nullability of internal reference types helps avoid breaking changes.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0056.severity = warning
+# RS0057: Internal members should not use oblivious types
+# Using oblivious reference types can lead to breaking changes.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0057.severity = warning
+# RS0058: Missing shipped or unshipped internal API file
+# All internal API files should be present.
+# Please keep this rule's severity above suggestion to help avoid missing internal API files.
+dotnet_diagnostic.RS0058.severity = warning
+# RS0059: Do not add multiple public overloads with optional parameters
+# Multiple internal overloads with optional parameters can lead to breaking changes.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0059.severity = warning
+# RS0060: API with optional parameter(s) should have the most parameters amongst its public overloads
+# API with optional parameter(s) that do not have the most parameters amongst its internal overloads can lead to breaking changes.
+# Please keep this rule's severity above suggestion to help avoid breaking changes.
+dotnet_diagnostic.RS0060.severity = warning
+# RS0061: Constructor make noninheritable base class inheritable
+# Noninheritable base classes with protected members exposed via derived class constructors should be made inheritable.
+# Please keep this rule's severity above suggestion to encourage consistently exposing internal API.
+dotnet_diagnostic.RS0061.severity = warning
 
 # ! Microsoft.CodeAnalysis.ResxSourceGenerator does not provide any code analysis.
 # This package is irrelevant.
