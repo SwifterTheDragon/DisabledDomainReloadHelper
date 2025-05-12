@@ -137,5 +137,178 @@
                 </summary>
             </Method>
         </Type>
+        <Type name="OnDisabledDomainReloadCleanupGenerator">
+            <Description name="OnDisabledDomainReloadCleanupGenerator">
+                <summary>
+                    Incrementally generates an invocation for methods decorated with <c><see cref="MarkerAttributeName" /></c>.
+                </summary>
+            </Description>
+            <Type name="EquatableList`1">
+                <Description>
+                    <summary>
+                        A <c><see cref="System.Collections.Generic.List{T}" /></c> that uses <b>value</b> equality.
+                    </summary>
+                    <typeparam name="T">
+                        The type of elements in the list.
+                    </typeparam>
+                </Description>
+                <Method name="op_Equality(SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList`1,SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList`1)">
+                    <summary>
+                        Determines whether two <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c>s contain the same values.
+                    </summary>
+                    <param name="list1">
+                        The first <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c> to compare.
+                    </param>
+                    <param name="list2">
+                        The second <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c> to compare.
+                    </param>
+                    <returns>
+                        <c><see langword="true" /></c> if the specified <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c>s have the same values. Otherwise, <c><see langword="false" /></c>.
+                    </returns>
+                </Method>
+                <Method name="op_Inequality(SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList`1,SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList`1)">
+                    <summary>
+                        Determines whether two <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c>s contain different values.
+                    </summary>
+                    <param name="list1">
+                        The first <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c> to compare.
+                    </param>
+                    <param name="list2">
+                        The second <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c> to compare.
+                    </param>
+                    <returns>
+                        <c><see langword="true" /></c> if the specified <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c>s have different values. Otherwise, <c><see langword="false" /></c>.
+                    </returns>
+                </Method>
+                <Method name="Equals(System.Object)">
+                    <summary>
+                        Determines whether two <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c>s have the same values.
+                    </summary>
+                    <param name="obj">
+                        The <c><see langword="object" /></c> to compare to.
+                    </param>
+                    <returns>
+                        <c><see langword="true" /></c> if the specified <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c>s have the same values. Otherwise, <c><see langword="false" /></c>.
+                    </returns>
+                </Method>
+                <Method name="GetHashCode">
+                    <summary>
+                        Gets a hash code for <c><see langword="this" /></c>.
+                    </summary>
+                    <returns>
+                        A hash code for the current <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c>.
+                    </returns>
+                </Method>
+                <Method name="Equals(System.Collections.Generic.IList`1)">
+                    <summary>
+                        Determines whether two <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c>s have the same values.
+                    </summary>
+                    <param name="other">
+                        The other list to compare to.
+                    </param>
+                    <returns>
+                        <c><see langword="true" /></c> if the specified <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{T}" /></c>s have the same values. Otherwise, <c><see langword="false" /></c>.
+                    </returns>
+                </Method>
+            </Type>
+            <Property name="MarkerAttributeName">
+                <summary>
+                    Gets the fully qualified metadata name for the marker attribute for this generator.
+                </summary>
+                <value>
+                    The fully qualified metadata name for the marker attribute for this generator.
+                </value>
+            </Property>
+            <Property name="ToolName">
+                <summary>
+                    Gets the name of the tool providing this generator.
+                </summary>
+                <value>
+                    The name of the tool providing this generator.
+                </value>
+            </Property>
+            <Property name="ToolVersion">
+                <summary>
+                    Gets the version of the tool providing this generator.
+                </summary>
+                <value>
+                    The version of the tool providing this generator.
+                </value>
+            </Property>
+            <Property name="GeneratorName">
+                <summary>
+                    Gets the name of this generator.
+                </summary>
+                <value>
+                    The name of this generator.
+                </value>
+            </Property>
+            <Method name="SyntaxNodePredicate(Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)">
+                <summary>
+                    Checks if <c><paramref name="syntaxNode" /></c> is <c><see cref="global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseMethodDeclarationSyntax" /></c>.
+                </summary>
+                <param name="syntaxNode">
+                    The <c><see cref="global::Microsoft.CodeAnalysis.SyntaxNode" /></c> to be checked.
+                </param>
+                <param name="cancellationToken">
+                    See <c><see cref="global::System.Threading.CancellationToken" /></c>.
+                </param>
+                <returns>
+                    Is <c><paramref name="syntaxNode" /></c> a <c><see cref="global::Microsoft.CodeAnalysis.CSharp.Syntax.BaseMethodDeclarationSyntax" /></c>?
+                </returns>
+            </Method>
+            <Method name="Transform(Microsoft.CodeAnalysis.GeneratorAttributeSyntaxContext,System.Threading.CancellationToken)">
+                <summary>
+                    Gathers data regarding the method decorated with the marker attribute.
+                </summary>
+                <param name="context">
+                    See <c><see cref="global::Microsoft.CodeAnalysis.GeneratorAttributeSyntaxContext" /></c>.
+                </param>
+                <param name="cancellationToken">
+                    See <c><see cref="global::System.Threading.CancellationToken" /></c>.
+                </param>
+                <returns>
+                    The containing namespace, containing type name, and the name of the target method from <c><paramref name="context" /></c>.
+                </returns>
+            </Method>
+            <Method name="PipelinePredicate(System.ValueTuple{System.String,SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{System.String},System.String,SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases})">
+                <summary>
+                    Checks if <c><paramref name="model" /></c> contains either <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases.OnExitPlayMode" /></c>, or <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases.OnEnterPlayMode" /></c>.
+                </summary>
+                <param name="model">
+                    The data provided by the generator pipeline.
+                </param>
+                <returns>
+                    Does <c><paramref name="model" /></c> contain either <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases.OnExitPlayMode" /></c>, or <c><see cref="global::SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases.OnEnterPlayMode" /></c>?
+                </returns>
+            </Method>
+            <Method name="RegisterSourceOutput(Microsoft.CodeAnalysis.SourceProductionContext,System.ValueTuple{System.String,SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{System.String},System.String,SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases})">
+                <summary>
+                    Registers source output to <c><paramref name="context" /></c>.
+                </summary>
+                <param name="context">
+                    See <c><see cref="global::Microsoft.CodeAnalysis.SourceProductionContext" /></c>.
+                </param>
+                <param name="model">
+                    The data provided by the generator pipeline.
+                </param>
+            </Method>
+            <Method name="BuildAutoGeneratedCodeHeader">
+                <summary>
+                    Builds a code header comment to label auto-generated code.
+                </summary>
+                <returns>
+                    A header comment for labelling auto-generated code as auto-generated when scanning the contents of a source code file.
+                </returns>
+            </Method>
+            <Method name="BuildAutoGeneratedCodeFooter">
+                <summary>
+                    Builds a code footer comment to label auto-generated code.
+                </summary>
+                <returns>
+                    A footer comment for labelling auto-generated code as auto-generated.
+                </returns>
+            </Method>
+        </Type>
     </Namespace>
 </Assembly>

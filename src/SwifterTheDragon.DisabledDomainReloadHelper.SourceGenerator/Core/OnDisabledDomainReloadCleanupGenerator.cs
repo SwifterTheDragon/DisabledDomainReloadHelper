@@ -14,10 +14,9 @@ using System.Threading;
 
 namespace SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core
 {
-    /// <summary>
-    /// Incrementally generates an invocation for methods decorated with
-    /// <c><see cref="MarkerAttributeName"/></c>.
-    /// </summary>
+    /// <include
+    /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+    /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Description/*'/>
     [Generator]
     internal sealed class OnDisabledDomainReloadCleanupGenerator : IIncrementalGenerator
     {
@@ -52,9 +51,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
          */
         #endregion EquatableList<T> Legal Attribution
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Type[@name="EquatableList`1"]/Description/*'/>
         private sealed class EquatableList<T> : List<T>
         {
             #region Methods
+            /// <include
+            /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+            /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Type[@name="EquatableList`1"]/Method[@name="op_Equality(SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList`1,SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList`1)"]/*'/>
             public static bool operator ==(EquatableList<T> list1, EquatableList<T> list2)
             {
                 return ReferenceEquals(
@@ -65,16 +70,25 @@ SOFTWARE.
                         && list1.Equals(
                             obj: list2));
             }
+            /// <include
+            /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+            /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Type[@name="EquatableList`1"]/Method[@name="op_Inequality(SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList`1,SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList`1)"]/*'/>
             public static bool operator !=(EquatableList<T> list1, EquatableList<T> list2)
             {
                 return !(list1 == list2);
             }
+            /// <include
+            /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+            /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Type[@name="EquatableList`1"]/Method[@name="Equals(System.Object)"]/*'/>
             public override bool Equals(
                 object obj)
             {
                 return Equals(
                     other: obj as EquatableList<T>);
             }
+            /// <include
+            /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+            /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Type[@name="EquatableList`1"]/Method[@name="GetHashCode"]/*'/>
             public override int GetHashCode()
             {
                 return this.Select(
@@ -88,6 +102,9 @@ SOFTWARE.
                             return x ^ y;
                         });
             }
+            /// <include
+            /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+            /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Type[@name="EquatableList`1"]/Method[@name="Equals(System.Collections.Generic.IList`1)"]/*'/>
             internal bool Equals(
                 IList<T> other)
             {
@@ -110,10 +127,9 @@ SOFTWARE.
         }
         #endregion Nested Types
         #region Fields & Properties
-        /// <summary>
-        /// The fully qualified metadata name for the marker attribute for this
-        /// generator.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Property[@name="MarkerAttributeName"]/*'/>
         private static string MarkerAttributeName
         {
             get
@@ -121,9 +137,9 @@ SOFTWARE.
                 return "SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.OnCleanupDisabledDomainReloadsAttribute";
             }
         }
-        /// <summary>
-        /// The name of the tool providing this generator.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Property[@name="ToolName"]/*'/>
         private static string ToolName
         {
             get
@@ -131,9 +147,9 @@ SOFTWARE.
                 return typeof(OnDisabledDomainReloadCleanupGenerator).Assembly.GetName().Name;
             }
         }
-        /// <summary>
-        /// The version of the tool providing this generator.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Property[@name="ToolVersion"]/*'/>
         private static string ToolVersion
         {
             get
@@ -141,9 +157,9 @@ SOFTWARE.
                 return FileVersionInfo.GetVersionInfo(typeof(OnDisabledDomainReloadCleanupGenerator).Assembly.Location).ProductVersion;
             }
         }
-        /// <summary>
-        /// The name of this generator.
-        /// </summary>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Property[@name="GeneratorName"]/*'/>
         private static string GeneratorName
         {
             get
@@ -174,40 +190,18 @@ SOFTWARE.
                 source: pipeline2,
                 action: RegisterSourceOutput);
         }
-        /// <summary>
-        /// Checks if <c><paramref name="syntaxNode"/></c> is
-        /// <c><see cref="BaseMethodDeclarationSyntax"/></c>.
-        /// </summary>
-        /// <param name="syntaxNode">
-        /// The <c><see cref="SyntaxNode"/></c> to be checked.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// See <c><see cref="CancellationToken"/></c>.
-        /// </param>
-        /// <returns>
-        /// Is <c><paramref name="syntaxNode"/></c> an instance of
-        /// <c><see cref="BaseMethodDeclarationSyntax"/></c>?
-        /// </returns>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Method[@name="SyntaxNodePredicate(Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)"]/*'/>
         private static bool SyntaxNodePredicate(
             SyntaxNode syntaxNode,
             CancellationToken cancellationToken)
         {
             return syntaxNode is BaseMethodDeclarationSyntax;
         }
-        /// <summary>
-        /// Gathers data regarding the method decorated with the marker
-        /// attribute.
-        /// </summary>
-        /// <param name="context">
-        /// See <c><see cref="GeneratorAttributeSyntaxContext"/></c>.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// See <c><see cref="CancellationToken"/></c>.
-        /// </param>
-        /// <returns>
-        /// The containing namespace, containing type name, and name of the
-        /// target method from <c><paramref name="context"/></c>.
-        /// </returns>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Method[@name="Transform(Microsoft.CodeAnalysis.GeneratorAttributeSyntaxContext,System.Threading.CancellationToken)"]/*'/>
         private static (
             string generatedNamespace,
             EquatableList<string> generatedTypeNames,
@@ -245,21 +239,9 @@ SOFTWARE.
                 generatedMethodName,
                 phase);
         }
-        /// <summary>
-        /// Checks if <c><paramref name="model"/></c> contains either
-        /// <c><see cref="CleanupDisabledDomainReloadPhases.OnExitPlayMode"/></c>,
-        /// or
-        /// <c><see cref="CleanupDisabledDomainReloadPhases.OnEnterPlayMode"/></c>.
-        /// </summary>
-        /// <param name="model">
-        /// The data provided by the pipeline.
-        /// </param>
-        /// <returns>
-        /// Does <c><paramref name="model"/></c> contain either
-        /// <c><see cref="CleanupDisabledDomainReloadPhases.OnExitPlayMode"/></c>,
-        /// or
-        /// <c><see cref="CleanupDisabledDomainReloadPhases.OnEnterPlayMode"/></c>?
-        /// </returns>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Method[@name="PipelinePredicate(System.ValueTuple{System.String,SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{System.String},System.String,SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases})"]/*'/>
         private static bool PipelinePredicate(
             (
                 string generatedNamespace,
@@ -273,15 +255,9 @@ SOFTWARE.
                 && !model.phase.Equals(
                     obj: default);
         }
-        /// <summary>
-        /// Registers source output to <c><paramref name="context"/></c>.
-        /// </summary>
-        /// <param name="context">
-        /// See <c><see cref="SourceProductionContext"/></c>.
-        /// </param>
-        /// <param name="model">
-        /// The data provided by the pipeline.
-        /// </param>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Method[@name="RegisterSourceOutput(Microsoft.CodeAnalysis.SourceProductionContext,System.ValueTuple{System.String,SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.Core.OnDisabledDomainReloadCleanupGenerator.EquatableList{System.String},System.String,SwifterTheDragon.DisabledDomainReloadHelper.Markers.Core.CleanupDisabledDomainReloadPhases})"]/*'/>
         private static void RegisterSourceOutput(
             SourceProductionContext context,
             (
@@ -609,13 +585,9 @@ SOFTWARE.
                     + ".Generated.cs",
                 sourceText: sourceText);
         }
-        /// <summary>
-        /// Builds a code header comment to label auto-generated code.
-        /// </summary>
-        /// <returns>
-        /// A header comment for labelling auto-generated code as auto-generated
-        /// when scanning the contents of a source code file.
-        /// </returns>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Method[@name="BuildAutoGeneratedCodeHeader"]/*'/>
         private static string BuildAutoGeneratedCodeHeader()
         {
             var headerBuilder = new StringBuilder();
@@ -656,13 +628,9 @@ SOFTWARE.
                 .AppendLine();
             return headerBuilder.ToString();
         }
-        /// <summary>
-        /// Builds a code footer comment to label auto-generated code.
-        /// </summary>
-        /// <returns>
-        /// A footer comment for labelling auto-generated code as
-        /// auto-generated.
-        /// </returns>
+        /// <include
+        /// file='../../docs/SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator.xml'
+        /// path='Assembly[@name="SwifterTheDragon.DisabledDomainReloadHelper.SourceGenerator"]/Namespace[@name="Core"]/Type[@name="OnDisabledDomainReloadCleanupGenerator"]/Method[@name="BuildAutoGeneratedCodeFooter"]/*'/>
         private static string BuildAutoGeneratedCodeFooter()
         {
             StringBuilder footerBuilder = new StringBuilder()
