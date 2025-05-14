@@ -11,7 +11,4 @@
 # Set default behaviour to automatically normalise line endings.
 * text=auto
 
-# Set file behaviour to treat as text & diff as C# source code.
-*.cs text diff=csharp
-
 # Copyright SwifterTheDragon, and the SwifterTheDragon.DisabledDomainReloadHelper contributors, 2025. All Rights Reserved.
